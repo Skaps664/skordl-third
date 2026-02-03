@@ -79,56 +79,61 @@ export function SelectedWorks() {
             >
               <div className="group block pt-10">
                 <article className="overflow-hidden rounded-2xl md:rounded-3xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  {/* Content */}
-                  <div className="p-6 md:p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="text-lg md:text-xl font-semibold">{work.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">{work.description}</p>
-                      </div>
-                      <div className="hidden md:flex flex-col gap-2 flex-shrink-0">
-                        <Link
-                          href={work.caseStudyUrl}
-                          className="inline-flex items-center gap-1 text-xs font-medium hover:underline transition-colors whitespace-nowrap"
-                          style={{ color: "#203eec" }}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Read case study
-                          <ArrowUpRight className="w-3 h-3" />
-                        </Link>
-                        <Link
-                          href={work.liveUrl}
-                          className="inline-flex items-center gap-1 text-xs font-medium hover:underline transition-colors"
-                          style={{ color: "#203eec" }}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Visit live site
-                          <ArrowUpRight className="w-3 h-3" />
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {work.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Image */}
-                  <div className="relative aspect-[2/1] overflow-hidden bg-secondary">
+                  <div className="relative aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-secondary">
                     <Image
                       src={work.image || "/placeholder.svg"}
                       alt={work.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">{work.title}</h3>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{work.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6 md:mb-4">
+                      {work.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1.5 md:py-1 text-xs md:text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Link
+                        href={work.caseStudyUrl}
+                        className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium border rounded-full hover:bg-secondary transition-all"
+                        style={{ color: "#203eec", borderColor: "#203eec" }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Read Case Study
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                      <Link
+                        href={work.liveUrl}
+                        className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white rounded-full transition-all hover:shadow-lg"
+                        style={{ 
+                          background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
+                          boxShadow: "0 4px 15px rgba(32, 62, 236, 0.25)"
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Visit Live Site
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    </div>
                   </div>
                 </article>
               </div>

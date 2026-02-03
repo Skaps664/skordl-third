@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/footer"
 import { Hero } from "@/components/sections/hero"
 import { Transformation } from "@/components/sections/transformation"
 import { SelectedWorks } from "@/components/sections/selected-works"
+import { Products } from "@/components/sections/products"
 import { About } from "@/components/sections/about"
 import { ClientLogos } from "@/components/sections/client-logos"
 import { Services } from "@/components/sections/services"
@@ -29,7 +30,8 @@ export default function HomePage() {
         <About />
         <Services />
         <Team />
-                <Testimonials />
+        <Testimonials />
+        <Products />
 
         {/* <UniqueOfferings /> */}
         
