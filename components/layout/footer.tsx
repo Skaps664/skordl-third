@@ -22,7 +22,7 @@ const footerCompany = [
   { href: "#about", label: "About Us" },
   { href: "#team", label: "Our Team" },
   { href: "#", label: "Careers" },
-  { href: "#contact-form", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ]
 
 const footerInsights = [
@@ -40,7 +40,7 @@ const footerLinks = [
   { href: "#about", label: "About Us" },
   { href: "#services", label: "Services" },
   { href: "#insights", label: "Insights" },
-  { href: "#contact-form", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Footer() {

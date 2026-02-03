@@ -13,6 +13,8 @@ const works = [
     description: "Building an intelligent onboarding flow powered by GPT-4 and natural conversations",
     image: "/images/work-onboarding.png",
     tags: ["AI", "v0", "Next.js", "OpenAI"],
+    caseStudyUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const works = [
     description: "Personalized style recommendations using computer vision and preference learning",
     image: "/images/work-fashion.png",
     tags: ["AI", "Machine Learning", "Midjourney"],
+    caseStudyUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 3,
@@ -29,6 +33,8 @@ const works = [
     description: "AI-powered task prioritization and scheduling with natural language processing",
     image: "/images/work-tasks.png",
     tags: ["AI", "Claude", "Vibe Coding"],
+    caseStudyUrl: "#",
+    liveUrl: "#",
   },
   {
     id: 4,
@@ -37,12 +43,14 @@ const works = [
     description: "Real-time market insights and predictions powered by advanced AI models",
     image: "/images/work-crypto.png",
     tags: ["AI", "Data Viz", "GPT-4"],
+    caseStudyUrl: "#",
+    liveUrl: "#",
   },
 ]
 
 export function SelectedWorks() {
   return (
-    <section id="works" className="py-20 md:py-10 md:pt-32 pb-4">
+    <section id="works" className="py-12 md:py-16">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-12 md:mb-16">
@@ -69,19 +77,35 @@ export function SelectedWorks() {
                 zIndex: index + 1,
               }}
             >
-              <Link href="#" className="group block pt-10">
+              <div className="group block pt-10">
                 <article className="overflow-hidden rounded-2xl md:rounded-3xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   {/* Content */}
                   <div className="p-6 md:p-6">
                     <div className="flex items-start justify-between gap-4">
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-lg md:text-xl font-semibold">{work.title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{work.description}</p>
                       </div>
-                      <ArrowUpRight
-                        className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1"
-                        style={{ color: "#203eec" }}
-                      />
+                      <div className="hidden md:flex flex-col gap-2 flex-shrink-0">
+                        <Link
+                          href={work.caseStudyUrl}
+                          className="inline-flex items-center gap-1 text-xs font-medium hover:underline transition-colors whitespace-nowrap"
+                          style={{ color: "#203eec" }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Read case study
+                          <ArrowUpRight className="w-3 h-3" />
+                        </Link>
+                        <Link
+                          href={work.liveUrl}
+                          className="inline-flex items-center gap-1 text-xs font-medium hover:underline transition-colors"
+                          style={{ color: "#203eec" }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Visit live site
+                          <ArrowUpRight className="w-3 h-3" />
+                        </Link>
+                      </div>
                     </div>
 
                     {/* Tags */}
@@ -107,7 +131,7 @@ export function SelectedWorks() {
                     />
                   </div>
                 </article>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

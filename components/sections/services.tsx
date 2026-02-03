@@ -1,55 +1,151 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 import { SectionTitle } from "@/components/ui/section-title"
 
 const services = [
   {
-    title: "Software Development",
-    description: "Custom solutions built on modern architectures, designed for scalability, performance, and maintainability. From MVPs to enterprise systems.",
+    title: "Develop your MVP with us",
+    items: [
+      "Rapid prototyping & validation",
+      "Product-market fit research",
+      "Scalable architecture from day one",
+      "User testing & iteration",
+      "Go-to-market technical strategy",
+    ],
   },
   {
-    title: "Web & Mobile Apps",
-    description: "Full-stack web applications and mobile platforms that combine intuitive design with robust backend infrastructure.",
+    title: "Redesign your website",
+    items: [
+      "UX audit & behavioral analysis",
+      "Modern design systems",
+      "Performance optimization",
+      "Conversion rate improvements",
+      "Accessibility compliance",
+    ],
   },
   {
-    title: "Backend & Cloud Systems",
-    description: "Scalable backend architectures, API design, cloud infrastructure, and DevOps solutions using modern technologies.",
+    title: "Bring your vision to life",
+    items: [
+      "Full-stack web applications",
+      "Mobile app development",
+      "Real-time systems & WebSockets",
+      "Progressive web apps",
+      "Cross-platform solutions",
+    ],
   },
   {
-    title: "UI/UX Design",
-    description: "User-centered design that balances aesthetics with functionality. Design systems, prototypes, and production-ready interfaces.",
+    title: "Ecommerce solutions",
+    items: [
+      "Headless commerce architecture",
+      "Payment gateway integration",
+      "Inventory management systems",
+      "Personalization engines",
+      "Analytics & conversion tracking",
+    ],
   },
   {
-    title: "Machine Learning Solutions",
-    description: "Applied ML models for classification, prediction, and optimization. Integration of AI capabilities into production systems.",
+    title: "Custom software & management systems",
+    items: [
+      "Internal tools & dashboards",
+      "Workflow automation",
+      "CRM & ERP systems",
+      "Data management platforms",
+      "Integration & API development",
+    ],
   },
   {
-    title: "Data Engineering & Analytics",
-    description: "Data pipelines, warehousing, and analytics infrastructure. Transform raw data into actionable insights.",
+    title: "AI solutions",
+    items: [
+      "LLM integration & fine-tuning",
+      "Machine learning pipelines",
+      "Natural language processing",
+      "Computer vision systems",
+      "Predictive analytics & forecasting",
+    ],
   },
 ]
 
 export function Services() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
-    <section id="services" className="py-20 md:py-32 border-border border-t-0 md:pt-0 md:pb-0">
+    <section id="services" className="py-16 md:py-20 border-t border-border">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <SectionTitle className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-12 md:mb-16">
-          Services
-        </SectionTitle>
+        <div className="mb-16 md:mb-20">
+          <p className="text-sm font-mono text-muted-foreground mb-6 tracking-wider uppercase">
+            What we do
+          </p>
+          <SectionTitle className="text-3xl md:text-4xl lg:text-6xl font-semibold tracking-tight">
+            Services
+          </SectionTitle>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group flex flex-col p-6 md:p-8 border border-border rounded-2xl hover:bg-secondary/50 transition-all hover:border-foreground/20"
-            >
-              <h3 className="font-semibold text-xl md:text-2xl">{service.title}</h3>
-              <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{service.description}</p>
-            </div>
-          ))}
+        {/* Accordion Services */}
+        <div className="space-y-4">
+          {services.map((service, index) => {
+            const isOpen = openIndex === index
+            
+            return (
+              <div
+                key={index}
+                className="border border-border rounded-2xl overflow-hidden bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-foreground/20"
+              >
+                {/* Header */}
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full flex items-center justify-between p-5 md:p-6 lg:p-8 text-left group"
+                >
+                  <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold pr-4">
+                    {service.title}
+                  </h3>
+                  <div 
+                    className={`flex-shrink-0 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  >
+                    <ChevronDown 
+                      className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" 
+                    />
+                  </div>
+                </button>
+
+                {/* Content */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-5 md:px-6 lg:px-8 pb-5 md:pb-6 lg:pb-8 pt-0">
+                    <div className="border-t border-border pt-6">
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {service.items.map((item, itemIndex) => (
+                          <li
+                            key={itemIndex}
+                            className="flex items-start gap-3 text-muted-foreground"
+                          >
+                            <span 
+                              className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
+                              style={{ backgroundColor: "#203eec" }}
+                            />
+                            <span className="text-sm md:text-base leading-relaxed">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

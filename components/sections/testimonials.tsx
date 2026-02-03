@@ -55,7 +55,7 @@ export function Testimonials() {
   const mobileTestimonials = testimonials.slice(0, 6)
 
   return (
-    <section id="testimonials" className="py-20 border-border overflow-hidden md:py-32 border-t-[0] pb-0 relative">
+    <section id="testimonials" className="py-16 border-border overflow-hidden md:py-20 border-t pb-0 relative">
       <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20 hidden lg:block" />
 
       <div className="hidden lg:block pl-6 md:pl-12">

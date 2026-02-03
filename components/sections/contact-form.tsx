@@ -19,9 +19,19 @@ export function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
+    // Map EmailJS field names to our state keys
+    const fieldMap: { [key: string]: string } = {
+      'from_name': 'name',
+      'from_email': 'email',
+      'company': 'company',
+      'from_number': 'phone',
+      'from_subject': 'subject',
+      'message': 'message'
+    }
+    const stateKey = fieldMap[name] || name
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [stateKey]: value,
     }))
   }
 
@@ -54,26 +64,15 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact-form" className=" border-border border-t-0">
-      <div className="max-w-3xl mx-auto px-6 md:px-12 pb-24">
-        {/* Section Header */}
-        {/* <div className="text-center mb-12 md:mb-16">
-          <SectionTitle className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance">
-            Let us project your thought into reality
-          </SectionTitle>
-          <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-            Have a project in mind? Tell us about it. Whether you're looking for a technical partner for development, research collaboration, or consulting, we'd love to discuss how we can help.
-          </p>
-        </div> */}
-
-        {/* Form */}
-        {submitted ? (
-          <div className="p-8 md:p-12 border border-border rounded-2xl bg-secondary/50 text-center">
-            <h3 className="text-2xl font-semibold mb-4">Thank you for reaching out!</h3>
-            <p className="text-muted-foreground">We'll review your message and get back to you soon.</p>
-          </div>
-        ) : (
-          <form ref={form} onSubmit={sendEmail} className="space-y-6 md:space-y-8">
+    <>
+      {/* Form */}
+      {submitted ? (
+        <div className="p-8 md:p-12 border border-border rounded-2xl bg-secondary/50 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Thank you for reaching out!</h3>
+          <p className="text-muted-foreground">We'll review your message and get back to you soon.</p>
+        </div>
+      ) : (
+        <form ref={form} onSubmit={sendEmail} className="space-y-6 md:space-y-8">
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -197,7 +196,6 @@ export function ContactForm() {
             </button>
           </form>
         )}
-      </div>
-    </section>
+    </>
   )
 }

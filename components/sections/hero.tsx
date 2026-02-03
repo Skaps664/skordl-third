@@ -45,14 +45,14 @@ export function Hero() {
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-20 md:py-32">
         <div className="">
-          <p className="text-muted-foreground mb-6 text-lg font-normal">Skord Labs — Founded 2024</p>
+          <p className="text-muted-foreground mb-4 md:mb-6 text-sm md:text-lg font-normal">Skord Labs — Founded 2024</p>
 
           {/* Main Title with animated words */}
-          <h1 className="text-5xl sm:text-6xl lg:text-[96px] font-semibold tracking-tight leading-[1] text-balance md:text-9xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[96px] font-semibold tracking-tight leading-[1.05] text-balance">
             {words.map((word, index) => (
               <span
                 key={index}
-                className={`hero-word my-0 py-2 font-mono font-normal text-5xl md:text-7xl ${word === "research" ? "ai-gradient-word" : ""}`}
+                className={`hero-word my-0 py-1 md:py-2 font-mono font-normal text-4xl sm:text-5xl md:text-7xl ${word === "research" ? "ai-gradient-word" : ""}`}
                 style={{
                   animationDelay: `${index * 0.1}s`,
                   marginRight: index < words.length - 1 ? "0.25em" : "0",
@@ -73,14 +73,14 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="mt-8 max-w-xl leading-relaxed text-left text-lg text-zinc-500 ml-0">
+          <p className="mt-6 md:mt-8 max-w-xl leading-relaxed text-left text-base md:text-lg text-zinc-500 ml-0">
             We build production-grade software while conducting applied research at the intersection of engineering, design, and computer science. A lab where commercial delivery meets scientific rigor.
           </p>
 
-          <div className="flex flex-row items-start gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mt-8 md:mt-10">
             <Link
               href="#contact-form"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white rounded-full transition-all relative overflow-hidden group"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium text-white rounded-full transition-all relative overflow-hidden group"
               style={{
                 background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
                 boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
@@ -96,7 +96,7 @@ export function Hero() {
             </Link>
             <Link
               href="#works"
-              className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium transition-colors"
               style={{ color: "#203eec" }}
             >
               View Our Work
@@ -108,7 +108,7 @@ export function Hero() {
 
       <div className="w-full mt-8">
         <Image
-          src="./sq_2.jpg"
+          src="./under-hero.webp"
           alt="Designer workspace"
           width={1200}
           height={800}
