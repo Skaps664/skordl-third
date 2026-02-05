@@ -13,7 +13,7 @@ export function CallCTA() {
       const timer = setTimeout(() => {
         setIsVisible(true)
         sessionStorage.setItem("call-cta-seen", "true")
-      }, 50000) // Show after 50 seconds
+      }, 30000) // Show after 50 seconds
       return () => clearTimeout(timer)
     }
   }, [])

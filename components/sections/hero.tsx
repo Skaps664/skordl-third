@@ -108,7 +108,7 @@ export function Hero() {
 
       <div className="w-full mt-8">
         <Image
-          src="./under-hero.webp"
+          src="./under-hero-2.webp"
           alt="Designer workspace"
           width={1200}
           height={800}

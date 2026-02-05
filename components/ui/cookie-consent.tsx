@@ -34,7 +34,7 @@ export function CookieConsent() {
       <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300" />
 
       {/* Cookie consent popup */}
-      <div className="fixed bottom-6 right-6 z-50 w-full max-w-md animate-in slide-in-from-bottom-5 duration-500">
+      <div className="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-auto sm:right-6 z-50 w-auto sm:max-w-md animate-in slide-in-from-bottom-5 duration-500">
         <div className="bg-card border border-border rounded-2xl shadow-2xl p-6">
           <div className="flex items-start justify-between mb-4">
             <h3 className="text-lg font-semibold">Cookie Preferences</h3>
