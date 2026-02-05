@@ -1,0 +1,79 @@
+
+> my-v0-project@0.1.0 build /home/skaps/skord-labs
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Compiled successfully in 5.8s
+   Skipping validation of types
+   Collecting page data using 7 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 7 workers (0/47) ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 7 workers (11/47) 
+   Generating static pages using 7 workers (23/47) 
+   Generating static pages using 7 workers (35/47) 
+ ✓ Generating static pages using 7 workers (47/47) in 2.9s
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /activities
+├ ○ /api-reference
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/physics-informed-neural-networks-structural-design
+│ ├ /blog/scalable-ml-integration-production-systems
+│ ├ /blog/backend-architecture-data-intensive-applications
+│ └ [+3 more paths]
+├ ○ /careers
+├ ○ /case-studies
+├ ● /case-studies/[slug]
+│ ├ /case-studies/ai-onboarding-assistant
+│ ├ /case-studies/ai-fashion-curator
+│ ├ /case-studies/smart-task-manager
+│ └ [+3 more paths]
+├ ○ /community
+├ ○ /compliance
+├ ○ /contact
+├ ○ /cookie-policy
+├ ○ /documentation
+├ ○ /privacy-policy
+├ ○ /products/billingpro
+├ ○ /products/cureos
+├ ○ /products/eazstart
+├ ○ /products/flowboard
+├ ○ /products/newshub
+├ ○ /security
+├ ○ /services/ai-solutions
+├ ○ /services/custom-development
+├ ○ /services/ecommerce-solutions
+├ ○ /services/management-systems
+├ ○ /services/mvp-development
+├ ○ /services/website-redesign
+├ ○ /sitemap-page
+├ ○ /sitemap.xml
+├ ○ /solutions/custom-development
+├ ○ /solutions/for-agencies
+├ ○ /solutions/for-enterprise
+├ ○ /solutions/for-startups
+├ ○ /solutions/tech-consulting
+├ ○ /support
+└ ○ /terms-of-service
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

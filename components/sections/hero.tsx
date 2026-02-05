@@ -112,7 +112,7 @@ export function Hero() {
           alt="Designer workspace"
           width={1200}
           height={800}
-          className="w-full h-auto transition-all duration-100 ease-out"
+          className="w-full h-[500px] md:h-auto object-cover md:object-contain transition-all duration-100 ease-out"
           style={{
             opacity: opacity,
             clipPath: isDesktop ? `inset(${100 - maskReveal}% 0 0 0)` : "none",

@@ -3,6 +3,13 @@ import { Footer } from "@/components/layout/footer"
 import { ContactForm } from "@/components/sections/contact-form"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { Mail, MapPin, Phone } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Us | Skord Labs - Pakistan's Top Software Company",
+  description: "Get in touch with Skord Labs, Pakistan's leading software development company. Let's discuss your project and build something amazing together.",
+  keywords: ["contact Skord Labs", "software development inquiry", "Pakistan software company contact", "get quote software development"],
+}
 
 export default function ContactPage() {
   return (
@@ -72,10 +79,10 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg mb-2">Phone</h3>
                       <a
-                        href="tel:+1234567890"
+                        href="tel:+923259327819"
                         className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                       >
-                        +1 (234) 567-890
+                        +92 325 9327819
                       </a>
                     </div>
                   </div>
@@ -90,11 +97,9 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg mb-2">Address</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        123 Innovation Street
+                        A2 Third Floor ,Dil Jan Arcade,
                         <br />
-                        Tech District
-                        <br />
-                        San Francisco, CA 94103
+                        Ring Road, Peshawar
                       </p>
                     </div>
                   </div>

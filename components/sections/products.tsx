@@ -12,9 +12,9 @@ const products = [
     name: "EazStart",
     tagline: "Startup Management Platform",
     description: "Track, manage, and streamline your startup operations from idea validation to scaling.",
-    link: "https://eazstart.vercel.app",
+    link: "/products/eazstart",
     status: "Live",
-    image: "/images/product-eazstart.png",
+    image: "https://placehold.co/800x600/ff006e/ffffff/png?text=EazStart",
     tags: ["SaaS", "Startup"],
   },
   {
@@ -22,9 +22,9 @@ const products = [
     name: "FlowBoard",
     tagline: "Collaborative Kanban",
     description: "Organize projects, manage tasks, and collaborate with your team in real-time.",
-    link: "#",
+    link: "/products/flowboard",
     status: "Live",
-    image: "/images/product-flowboard.png",
+    image: "https://placehold.co/800x600/203eec/ffffff/png?text=FlowBoard",
     tags: ["Productivity", "Collaboration"],
   },
   {
@@ -32,9 +32,9 @@ const products = [
     name: "NewsHub",
     tagline: "Modern News Platform",
     description: "Curated news and insights delivered with a beautiful, modern interface.",
-    link: "#",
+    link: "/products/newshub",
     status: "Live",
-    image: "/images/product-newshub.png",
+    image: "https://placehold.co/800x600/8b5cf6/ffffff/png?text=NewsHub",
     tags: ["Media", "Content"],
   },
   {
@@ -42,9 +42,9 @@ const products = [
     name: "cureOS",
     tagline: "Android Essentials",
     description: "Beautiful, privacy-focused alternatives for Gallery, Dialer, and Contacts.",
-    link: "#",
+    link: "/products/cureos",
     status: "Beta",
-    image: "/images/product-cureos.png",
+    image: "https://placehold.co/800x600/00d4ff/ffffff/png?text=cureOS",
     tags: ["Android", "Privacy"],
   },
   {
@@ -52,9 +52,9 @@ const products = [
     name: "BillingPro",
     tagline: "Smart Invoicing",
     description: "Professional invoices and GST compliance for Pakistani businesses.",
-    link: "#",
+    link: "/products/billingpro",
     status: "Live",
-    image: "/images/product-billingpro.png",
+    image: "https://placehold.co/800x600/fbbf24/ffffff/png?text=BillingPro",
     tags: ["Business", "Finance"],
   },
 ]
@@ -117,8 +117,6 @@ export function Products() {
             <Link
               key={product.id}
               href={product.link}
-              target={product.link.startsWith('http') ? '_blank' : '_self'}
-              rel={product.link.startsWith('http') ? 'noopener noreferrer' : ''}
               className="group block"
             >
               <div className="relative p-6 md:p-8 lg:p-10 border border-border rounded-2xl bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-500 hover:border-foreground/20">

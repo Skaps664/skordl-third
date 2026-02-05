@@ -1,12 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ArrowRight } from "lucide-react"
 import { SectionTitle } from "@/components/ui/section-title"
+import Link from "next/link"
 
 const services = [
   {
     title: "Develop your MVP with us",
+    href: "/services/mvp-development",
     items: [
       "Rapid prototyping & validation",
       "Product-market fit research",
@@ -17,6 +19,7 @@ const services = [
   },
   {
     title: "Redesign your website",
+    href: "/services/website-redesign",
     items: [
       "UX audit & behavioral analysis",
       "Modern design systems",
@@ -27,6 +30,7 @@ const services = [
   },
   {
     title: "Bring your vision to life",
+    href: "/services/custom-development",
     items: [
       "Full-stack web applications",
       "Mobile app development",
@@ -37,6 +41,7 @@ const services = [
   },
   {
     title: "Ecommerce solutions",
+    href: "/services/ecommerce-solutions",
     items: [
       "Headless commerce architecture",
       "Payment gateway integration",
@@ -47,6 +52,7 @@ const services = [
   },
   {
     title: "Custom software & management systems",
+    href: "/services/management-systems",
     items: [
       "Internal tools & dashboards",
       "Workflow automation",
@@ -57,6 +63,7 @@ const services = [
   },
   {
     title: "AI solutions",
+    href: "/services/ai-solutions",
     items: [
       "LLM integration & fine-tuning",
       "Machine learning pipelines",
@@ -98,23 +105,34 @@ export function Services() {
                 className="border border-border rounded-2xl overflow-hidden bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-foreground/20"
               >
                 {/* Header */}
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 lg:p-8 text-left group"
-                >
-                  <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold pr-4">
-                    {service.title}
-                  </h3>
-                  <div 
-                    className={`flex-shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                <div className="flex items-center justify-between p-5 md:p-6 lg:p-8">
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="flex-1 flex items-center justify-between text-left group pr-4"
                   >
-                    <ChevronDown 
-                      className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" 
-                    />
-                  </div>
-                </button>
+                    <h3 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold pr-4">
+                      {service.title}
+                    </h3>
+                    <div 
+                      className={`flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <ChevronDown 
+                        className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" 
+                      />
+                    </div>
+                  </button>
+                  
+                  <Link
+                    href={service.href}
+                    className="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 text-sm font-medium border border-border rounded-full hover:bg-secondary transition-all group"
+                    style={{ color: "#203eec", borderColor: "#203eec" }}
+                  >
+                    <span className="hidden md:inline">Learn More</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
 
                 {/* Content */}
                 <div

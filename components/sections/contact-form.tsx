@@ -10,7 +10,6 @@ export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
     phone: "",
     subject: "",
     message: "",
@@ -23,7 +22,6 @@ export function ContactForm() {
     const fieldMap: { [key: string]: string } = {
       'from_name': 'name',
       'from_email': 'email',
-      'company': 'company',
       'from_number': 'phone',
       'from_subject': 'subject',
       'message': 'message'
@@ -51,7 +49,7 @@ export function ContactForm() {
         (result) => {
           console.log("SUCCESS!", result.text)
           setSubmitted(true)
-          setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" })
+          setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
           setTimeout(() => {
             setSubmitted(false)
           }, 3000)
@@ -104,22 +102,6 @@ export function ContactForm() {
                 required
                 className="w-full px-4 py-3 border border-border rounded-lg bg-transparent text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 placeholder="your@email.com"
-              />
-            </div>
-
-            {/* Company */}
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium mb-2">
-                Company / Organization
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-border rounded-lg bg-transparent text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="Company name"
               />
             </div>
 

@@ -79,16 +79,6 @@ export function SelectedWorks() {
             >
               <div className="group block pt-10">
                 <article className="overflow-hidden rounded-2xl md:rounded-3xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                  {/* Image */}
-                  <div className="relative aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-secondary">
-                    <Image
-                      src={work.image || "/placeholder.svg"}
-                      alt={work.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
                   {/* Content */}
                   <div className="p-6 md:p-8">
                     <div className="flex items-start justify-between gap-4 mb-4">
@@ -134,6 +124,16 @@ export function SelectedWorks() {
                         <ArrowUpRight className="w-4 h-4" />
                       </Link>
                     </div>
+                  </div>
+
+                  {/* Image */}
+                  <div className="relative aspect-[16/10] md:aspect-[2/1] overflow-hidden bg-secondary">
+                    <Image
+                      src={work.image || "/placeholder.svg"}
+                      alt={work.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                 </article>
               </div>
