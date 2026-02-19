@@ -1,22 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import { Phone, X } from "lucide-react"
 import Link from "next/link"
+import { useCallCTA } from "@/lib/call-cta-context"
 
 export function CallCTA() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem("call-cta-seen")
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setIsVisible(true)
-        sessionStorage.setItem("call-cta-seen", "true")
-      }, 30000) // Show after 50 seconds
-      return () => clearTimeout(timer)
-    }
-  }, [])
+  const { isVisible, close } = useCallCTA()
 
   if (!isVisible) return null
 
@@ -30,7 +19,7 @@ export function CallCTA() {
         <div className="bg-card border border-border rounded-3xl shadow-2xl max-w-lg w-full animate-in zoom-in-95 duration-500 overflow-hidden">
           {/* Close button */}
           <button
-            onClick={() => setIsVisible(false)}
+            onClick={close}
             className="absolute top-6 right-6 p-2 rounded-xl hover:bg-secondary transition-colors z-10"
             aria-label="Close"
           >
@@ -76,14 +65,14 @@ export function CallCTA() {
                   background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
                   boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)"
                 }}
-                onClick={() => setIsVisible(false)}
+                onClick={close}
               >
                 <Phone className="w-5 h-5" />
                 +92 325 9327819
               </Link>
               
               <button
-                onClick={() => setIsVisible(false)}
+                onClick={close}
                 className="px-8 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 Maybe later

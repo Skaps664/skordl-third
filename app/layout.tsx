@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/ui/cookie-consent"
 import { CallCTA } from "@/components/ui/call-cta"
 import { BackToTop } from "@/components/ui/back-to-top"
+import { CallCTAProvider } from "@/lib/call-cta-context"
 import "./globals.css"
 
 const interTight = Inter_Tight({
@@ -61,10 +62,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${interTight.className} font-sans antialiased`}>
-        {children}
-        <CookieConsent />
-        <CallCTA />
-        <BackToTop />
+        <CallCTAProvider>
+          {children}
+          <CookieConsent />
+          <CallCTA />
+          <BackToTop />
+        </CallCTAProvider>
         <Analytics />
       </body>
     </html>
