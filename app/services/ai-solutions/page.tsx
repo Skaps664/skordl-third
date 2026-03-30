@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "AI Solutions & Machine Learning | Skord Labs - Pakistan's Top AI Company",
-  description: "Advanced AI and machine learning solutions. Natural language processing, computer vision, and intelligent automation by Pakistan's leading AI development company.",
-  keywords: ["AI development Pakistan", "machine learning Pakistan", "AI solutions", "artificial intelligence company Pakistan"],
+  title: "AI Systems, Bots, Models & Automation | Skord Labs",
+  description: "Design and deploy AI systems for business growth: AI bots, automations, custom AI models, social media AI workflows, and intelligent operations.",
+  keywords: ["AI systems", "AI bots", "AI automation", "AI models", "AI business solutions", "AI social media solutions"],
 }
 
 import { Header } from "@/components/layout/header"
@@ -13,23 +13,33 @@ import Link from "next/link"
 const capabilities = [
   {
     icon: Brain,
-    title: "LLM Integration",
-    description: "Integrate GPT-4, Claude, or custom models. Build AI-powered chatbots, assistants, and automation."
+    title: "Custom AI Models",
+    description: "Build, fine-tune, and evaluate LLMs and ML models for your domain, workflow, and quality targets."
   },
   {
-    icon: Eye,
-    title: "Computer Vision",
-    description: "Image recognition, object detection, OCR, and visual search powered by deep learning."
+    icon: Bot,
+    title: "AI Bots & Assistants",
+    description: "Deploy sales, support, and internal AI bots connected to your data, tools, and business processes."
   },
   {
-    icon: TrendingUp,
-    title: "Predictive Analytics",
-    description: "Machine learning models for forecasting, anomaly detection, and pattern recognition."
+    icon: Sparkles,
+    title: "AI Automation Systems",
+    description: "Automate repetitive business operations with AI-driven workflows across CRM, email, chat, and ops tools."
   },
   {
     icon: Network,
-    title: "Natural Language Processing",
-    description: "Sentiment analysis, text classification, entity extraction, and language understanding."
+    title: "AI Business Solutions",
+    description: "Create end-to-end AI systems for support, analytics, decision-making, and team productivity."
+  },
+  {
+    icon: TrendingUp,
+    title: "AI Social Media Solutions",
+    description: "Set up AI-powered content engines, campaign planning, scheduling, and optimization loops for growth."
+  },
+  {
+    icon: Eye,
+    title: "Vision & Intelligence",
+    description: "Use computer vision and predictive intelligence for quality control, monitoring, and forecasting."
   }
 ]
 
@@ -43,19 +53,19 @@ const process = [
 const deliverables = [
   {
     title: "AI Models",
-    items: ["Custom trained models", "LLM fine-tuning", "API endpoints", "Model documentation"]
+    items: ["Domain-tuned LLMs", "Prediction models", "Evaluation benchmarks", "Model docs"]
   },
   {
-    title: "Infrastructure",
-    items: ["Cloud deployment", "Auto-scaling setup", "Monitoring dashboards", "Cost optimization"]
+    title: "AI Systems",
+    items: ["Automation architecture", "Tool integrations", "Guardrails and controls", "Production rollout"]
   },
   {
-    title: "Integration",
-    items: ["API development", "Frontend integration", "Webhook setup", "Third-party connections"]
+    title: "Business Solutions",
+    items: ["Ops workflows", "Support AI setup", "Sales enablement", "Reporting dashboards"]
   },
   {
-    title: "Support",
-    items: ["Model retraining", "Performance monitoring", "Technical support", "Feature updates"]
+    title: "Social Media AI",
+    items: ["Content system setup", "Publishing automation", "Creative generation", "Performance optimization"]
   }
 ]
 
@@ -68,24 +78,24 @@ const metrics = [
 
 const useCases = [
   {
-    title: "Customer Support Automation",
-    description: "AI chatbots that handle 80% of support tickets, reducing response time from hours to seconds.",
-    icon: "💬"
+    title: "AI Customer Support Systems",
+    description: "Deploy AI support bots that resolve common requests, escalate complex cases, and improve SLA performance.",
+    icon: "CS"
   },
   {
-    title: "Document Processing",
-    description: "Automatically extract data from invoices, contracts, and forms with 95%+ accuracy.",
-    icon: "📄"
+    title: "AI Operations Automation",
+    description: "Automate onboarding, approvals, and reporting workflows across your business stack.",
+    icon: "OP"
   },
   {
-    title: "Recommendation Systems",
-    description: "Personalized product recommendations that increase conversion rates by 35%.",
-    icon: "🎯"
+    title: "AI Social Media Engines",
+    description: "Create always-on social media systems for content generation, scheduling, and campaign experimentation.",
+    icon: "SM"
   },
   {
-    title: "Fraud Detection",
-    description: "Real-time anomaly detection that catches fraudulent transactions before they process.",
-    icon: "🛡️"
+    title: "AI Model-Powered Analytics",
+    description: "Build forecasting and decision systems that turn data into actionable growth strategies.",
+    icon: "AN"
   }
 ]
 
@@ -105,7 +115,7 @@ export default function AISolutionsPage() {
             </p>
             <div className="max-w-4xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-6 md:mb-8">
-                Transform your business with
+                Build AI systems that
                 <br />
                 <span 
                   className="inline-block mt-2"
@@ -116,12 +126,12 @@ export default function AISolutionsPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  artificial intelligence
+                  automate and scale
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-                Build AI-powered solutions that automate workflows, enhance decision-making, and unlock 
-                new capabilities. From chatbots to machine learning models.
+                We design practical AI systems for real business outcomes: AI bots, automation workflows,
+                AI models, business intelligence, and social media growth engines.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -132,14 +142,14 @@ export default function AISolutionsPage() {
                     boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)"
                   }}
                 >
-                  Explore AI Solutions
+                  Start AI Project
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="/case-studies"
+                  href="/services/ai-systems"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium border border-border rounded-full hover:bg-secondary transition-all"
                 >
-                  AI Case Studies
+                  Explore AI Systems
                   <ArrowUpRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -181,7 +191,7 @@ export default function AISolutionsPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {capabilities.map((capability, index) => (
                 <div 
                   key={index}
@@ -216,7 +226,7 @@ export default function AISolutionsPage() {
                   key={index}
                   className="p-8 border border-border rounded-2xl bg-card hover:border-foreground/20 transition-all"
                 >
-                  <div className="text-5xl mb-4">{useCase.icon}</div>
+                  <div className="text-xl mb-4 font-semibold" style={{ color: "#203eec" }}>{useCase.icon}</div>
                   <h3 className="text-2xl font-semibold mb-4">{useCase.title}</h3>
                   <p className="text-muted-foreground">{useCase.description}</p>
                 </div>
@@ -298,7 +308,7 @@ export default function AISolutionsPage() {
                 Ready to leverage AI?
               </h2>
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                Let's explore how AI can transform your business operations and create new opportunities.
+                Let's plan your AI roadmap and launch systems that save time, reduce cost, and grow revenue.
               </p>
               <Link
                 href="/contact"
@@ -308,7 +318,7 @@ export default function AISolutionsPage() {
                   boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)"
                 }}
               >
-                Discuss AI Solutions
+                Discuss AI Systems
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

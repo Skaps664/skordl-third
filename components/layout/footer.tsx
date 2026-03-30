@@ -12,6 +12,8 @@ const socialLinks = [
 ]
 
 const footerProducts = [
+  { href: "/products/castaipro", label: "CastAIPro", tag: "Beta" },
+  { href: "/products/youtube-to-shorts-ai", label: "YouTube to Shorts AI", tag: "Beta" },
   { href: "/products/eazstart", label: "EazStart", tag: "Live" },
   { href: "/products/flowboard", label: "FlowBoard", tag: "Live" },
   { href: "/products/newshub", label: "NewsHub", tag: "Live" },
@@ -20,12 +22,15 @@ const footerProducts = [
 ]
 
 const footerServices = [
+  { href: "/services/ai-systems", label: "AI Systems & Automation" },
   { href: "/services/mvp-development", label: "MVP Development" },
+  { href: "/services/ai-social-media-marketing", label: "AI Social Media Setup" },
+  { href: "/services/brand-building", label: "Brand Building & Rebranding" },
+  { href: "/services/ai-solutions", label: "AI Solutions" },
   { href: "/services/website-redesign", label: "Website Redesign" },
   { href: "/services/custom-development", label: "Custom Development" },
   { href: "/services/ecommerce-solutions", label: "Ecommerce Solutions" },
   { href: "/services/management-systems", label: "Management Systems" },
-  { href: "/services/ai-solutions", label: "AI Solutions" },
 ]
 
 const footerCompany = [

@@ -15,6 +15,8 @@ const sitemapSections = [
   {
     title: "Products",
     links: [
+      { href: "/products/castaipro", label: "CastAIPro" },
+      { href: "/products/youtube-to-shorts-ai", label: "YouTube to Shorts AI" },
       { href: "/products/eazstart", label: "EazStart" },
       { href: "/products/flowboard", label: "FlowBoard" },
       { href: "/products/newshub", label: "NewsHub" },
@@ -25,12 +27,15 @@ const sitemapSections = [
   {
     title: "Services",
     links: [
+      { href: "/services/ai-systems", label: "AI Systems & Automation" },
+      { href: "/services/ai-solutions", label: "AI Solutions" },
+      { href: "/services/ai-social-media-marketing", label: "AI Social Media Marketing Setup" },
+      { href: "/services/brand-building", label: "Brand Building & Rebranding" },
       { href: "/services/mvp-development", label: "MVP Development" },
       { href: "/services/custom-development", label: "Custom Development" },
       { href: "/services/website-redesign", label: "Website Redesign" },
       { href: "/services/ecommerce-solutions", label: "Ecommerce Solutions" },
       { href: "/services/management-systems", label: "Management Systems" },
-      { href: "/services/ai-solutions", label: "AI Solutions" },
     ]
   },
   {

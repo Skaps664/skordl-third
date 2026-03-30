@@ -8,6 +8,26 @@ import { useEffect, useState } from "react"
 
 const products = [
   {
+    id: 6,
+    name: "CastAIPro",
+    tagline: "AI Face & Voice Character Studio",
+    description: "Turn your captured videos into any character with synced voice, style, and persona so you can create without showing your actual face.",
+    link: "/products/castaipro",
+    status: "Beta",
+    image: "https://placehold.co/800x600/6d28d9/ffffff/png?text=CastAIPro",
+    tags: ["AI", "Video", "Creator Tools"],
+  },
+  {
+    id: 7,
+    name: "YouTube to Shorts AI",
+    tagline: "Auto Shorts Generator",
+    description: "Convert long YouTube videos into viral-ready shorts with smart scene cuts, subtitles, hooks, and platform-ready export.",
+    link: "/products/youtube-to-shorts-ai",
+    status: "Beta",
+    image: "https://placehold.co/800x600/0f766e/ffffff/png?text=YT+to+Shorts+AI",
+    tags: ["AI", "Shorts", "Subtitles"],
+  },
+  {
     id: 1,
     name: "EazStart",
     tagline: "Startup Management Platform",

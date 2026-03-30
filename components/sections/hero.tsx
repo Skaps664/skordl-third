@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export function Hero() {
-  const titleText = "Software research & development laboratory"
+  const titleText = "AI systems and software development laboratory"
   const words = titleText.split(" ")
   const [maskReveal, setMaskReveal] = useState(0)
   const [opacity, setOpacity] = useState(0)
@@ -52,11 +52,11 @@ export function Hero() {
             {words.map((word, index) => (
               <span
                 key={index}
-                className={`hero-word my-0 py-1 md:py-2 font-mono font-normal text-4xl sm:text-5xl md:text-7xl ${word === "research" ? "ai-gradient-word" : ""}`}
+                className={`hero-word my-0 py-1 md:py-2 font-mono font-normal text-4xl sm:text-5xl md:text-7xl ${word === "AI" ? "ai-gradient-word" : ""}`}
                 style={{
                   animationDelay: `${index * 0.1}s`,
                   marginRight: index < words.length - 1 ? "0.25em" : "0",
-                  ...(word === "research"
+                  ...(word === "AI"
                     ? {
                         background: "linear-gradient(135deg, #ff006e 0%, #8b5cf6 33%, #203eec 66%, #00d4ff 100%)",
                         WebkitBackgroundClip: "text",
@@ -74,7 +74,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 md:mt-8 max-w-xl leading-relaxed text-left text-base md:text-lg text-zinc-500 ml-0">
-            We build production-grade software while conducting applied research at the intersection of engineering, design, and computer science. A lab where commercial delivery meets scientific rigor.
+            We design and deploy AI systems, AI automations, AI bots, and custom software for modern businesses. From strategy to launch, we build production-ready platforms that create measurable growth.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mt-8 md:mt-10">

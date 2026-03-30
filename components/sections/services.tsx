@@ -7,6 +7,50 @@ import Link from "next/link"
 
 const services = [
   {
+    title: "AI systems, bots & automations",
+    href: "/services/ai-systems",
+    items: [
+      "AI assistants & support bots",
+      "Workflow automations across tools",
+      "Custom AI model integration",
+      "AI business operations systems",
+      "AI tools for internal teams",
+    ],
+  },
+  {
+    title: "AI social media marketing setup",
+    href: "/services/ai-social-media-marketing",
+    items: [
+      "AI content planning and generation",
+      "Brand voice prompt systems",
+      "Creative automation workflows",
+      "Multi-platform publishing setup",
+      "Performance tracking and optimization",
+    ],
+  },
+  {
+    title: "Brand building, rebranding & launch",
+    href: "/services/brand-building",
+    items: [
+      "Brand strategy and positioning",
+      "Visual identity and messaging systems",
+      "Rebranding and migration planning",
+      "Go-to-market launch setup",
+      "AI-assisted brand operations",
+    ],
+  },
+  {
+    title: "AI solutions",
+    href: "/services/ai-solutions",
+    items: [
+      "LLM integration & fine-tuning",
+      "Machine learning pipelines",
+      "Natural language processing",
+      "Computer vision systems",
+      "Predictive analytics & forecasting",
+    ],
+  },
+  {
     title: "Develop your MVP with us",
     href: "/services/mvp-development",
     items: [
@@ -59,17 +103,6 @@ const services = [
       "CRM & ERP systems",
       "Data management platforms",
       "Integration & API development",
-    ],
-  },
-  {
-    title: "AI solutions",
-    href: "/services/ai-solutions",
-    items: [
-      "LLM integration & fine-tuning",
-      "Machine learning pipelines",
-      "Natural language processing",
-      "Computer vision systems",
-      "Predictive analytics & forecasting",
     ],
   },
 ]
