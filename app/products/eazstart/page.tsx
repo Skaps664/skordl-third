@@ -122,7 +122,7 @@ export default function EazStartPage() {
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-transparent border border-border">
                 <Image
-                  src="https://placehold.co/800x600/203eec/ffffff/png?text=EazStart+Platform"
+                  src="/images/work-onboarding.png"
                   alt="EazStart Platform"
                   fill
                   className="object-cover"

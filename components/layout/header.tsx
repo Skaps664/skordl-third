@@ -4,69 +4,187 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { ChevronDown, Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-const navItems = [
-  { href: "/#works", label: "Work", number: "01" },
-  { href: "/#about", label: "About", number: "02" },
-  { href: "/#services", label: "Services", number: "03" },
-  { href: "/#team", label: "Team", number: "04" },
-  { href: "/#testimonials", label: "Testimonials", number: "05" },
-  { href: "/#products", label: "Products", number: "06" },
-  { href: "/#insights", label: "Insights", number: "07" },
+type NavItem = {
+  label: string
+  href: string
+  children?: string[]
+}
+
+type NavGroup = {
+  label: string
+  number: string
+  items: NavItem[]
+}
+
+const navGroups: NavGroup[] = [
+  {
+    label: "About",
+    number: "01",
+    items: [
+      { label: "Recent Projects", href: "/case-studies" },
+      { label: "Our Team", href: "/team" },
+      { label: "Activities", href: "/activities" },
+      { label: "Community", href: "/community" },
+      { label: "Careers", href: "/careers" },
+    ],
+  },
+  {
+    label: "Services",
+    number: "02",
+    items: [
+      {
+        label: "Brand building, rebranding & launch",
+        href: "/services/brand-building",
+        children: [
+          "Brand strategy and positioning",
+          "Visual identity and messaging systems",
+          "Rebranding and migration planning",
+          "Go-to-market launch setup",
+          "AI-assisted brand operations",
+        ],
+      },
+      {
+        label: "AI solutions",
+        href: "/services/ai-solutions",
+        children: [
+          "AI assistants & support bots",
+          "Workflow automations across tools",
+          "Custom AI model integration",
+          "AI business operations systems",
+          "AI tools for internal teams",
+          "LLM integration & fine-tuning",
+          "Machine learning pipelines",
+          "Natural language processing",
+          "Computer vision systems",
+          "Predictive analytics & forecasting",
+        ],
+      },
+      {
+        label: "Develop your MVP with us",
+        href: "/services/mvp-development",
+        children: [
+          "Rapid prototyping & validation",
+          "Product-market fit research",
+          "Scalable architecture from day one",
+          "User testing & iteration",
+          "Go-to-market technical strategy",
+        ],
+      },
+      {
+        label: "Bring your vision to life",
+        href: "/services/custom-development",
+        children: [
+          "Full-stack web applications",
+          "Mobile app development",
+          "Real-time systems & WebSockets",
+          "Progressive web apps",
+          "Cross-platform solutions",
+        ],
+      },
+      {
+        label: "Ecommerce solutions",
+        href: "/services/ecommerce-solutions",
+        children: [
+          "Headless commerce architecture",
+          "Payment gateway integration",
+          "Inventory management systems",
+          "Personalization engines",
+          "Analytics & conversion tracking",
+        ],
+      },
+      {
+        label: "Custom software & management systems",
+        href: "/services/management-systems",
+        children: [
+          "Internal tools & dashboards",
+          "Workflow automation",
+          "CRM & ERP systems",
+          "Data management platforms",
+          "Integration & API development",
+        ],
+      },
+    ],
+  },
+  {
+    label: "Solutions",
+    number: "03",
+    items: [
+      { label: "For Startups", href: "/solutions/for-startups" },
+      { label: "For Agencies", href: "/solutions/for-agencies" },
+      { label: "For Enterprise", href: "/solutions/for-enterprise" },
+      { label: "Tech Consulting", href: "/solutions/tech-consulting" },
+    ],
+  },
+  {
+    label: "Products",
+    number: "04",
+    items: [
+      { label: "All Products", href: "/products" },
+      { label: "CastAIPro", href: "/products/castaipro" },
+      { label: "RedByOne", href: "/products/redbyone" },
+      { label: "ConfiguraX", href: "/products/configurax" },
+      { label: "EazStart", href: "/products/eazstart" },
+      { label: "FlowBoard", href: "/products/flowboard" },
+      { label: "cureOS", href: "/products/cureos" },
+      { label: "BillingPro", href: "/products/billingpro" },
+    ],
+  },
+  {
+    label: "Resources",
+    number: "05",
+    items: [
+      { label: "Blog", href: "/blog" },
+      { label: "Documentation", href: "/documentation" },
+      { label: "API Reference", href: "/api-reference" },
+      { label: "Support", href: "/support" },
+      { label: "Compliance", href: "/compliance" },
+      { label: "Security", href: "/security" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ]
 
 export function Header() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null)
+  const [openDesktopSubMenu, setOpenDesktopSubMenu] = useState<string | null>(null)
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null)
+  const [openMobileSubMenu, setOpenMobileSubMenu] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      
-      // Detect active section
-      const sections = navItems.map(item => item.href.replace('/#', ''))
-      const scrollPosition = window.scrollY + 100
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
     }
-    
+
     handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If href starts with "/#", let Next.js handle navigation to home page with hash
-    if (href.startsWith("/#")) {
-      // Don't prevent default, let Link handle navigation
-    } else if (window.location.pathname === "/" && href.startsWith("#")) {
-      // If we're on home page and it's a hash link, scroll to section
-      e.preventDefault()
-      const element = document.querySelector(href)
-      if (element) {
-        const headerOffset = 80 // Height of fixed header
-        const elementPosition = element.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        })
-      }
-    }
+  useEffect(() => {
+    setOpenDesktopMenu(null)
+    setOpenDesktopSubMenu(null)
+    setOpenMobileGroup(null)
+    setOpenMobileSubMenu(null)
     setIsMobileMenuOpen(false)
+  }, [pathname])
+
+  const isItemActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`)
+
+  const isGroupActive = (group: NavGroup) => group.items.some((item) => isItemActive(item.href))
+
+  const handleMobileGroupToggle = (label: string) => {
+    setOpenMobileGroup((current) => (current === label ? null : label))
+  }
+
+  const handleMobileSubMenuToggle = (key: string) => {
+    setOpenMobileSubMenu((current) => (current === key ? null : key))
   }
 
   return (
@@ -91,18 +209,91 @@ export function Header() {
               />
             </Link>
 
-            {/* Desktop Navigation - Hidden, use mobile menu */}
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              {navGroups.map((group) => (
+                <div
+                  key={group.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenDesktopMenu(group.label)}
+                  onMouseLeave={() => {
+                    setOpenDesktopMenu((current) => (current === group.label ? null : current))
+                    setOpenDesktopSubMenu(null)
+                  }}
                 >
-                  {item.label}
-                  <span className="text-xs ml-1 opacity-50">({item.number})</span>
-                </Link>
+                  <button
+                    type="button"
+                    onClick={() => setOpenDesktopMenu((current) => (current === group.label ? null : group.label))}
+                    className={cn(
+                      "inline-flex items-center gap-1.5 text-sm transition-colors",
+                      isGroupActive(group) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {group.label}
+                    <span className="text-xs opacity-50">({group.number})</span>
+                    <ChevronDown
+                      className={cn(
+                        "w-3.5 h-3.5 transition-transform duration-200",
+                        openDesktopMenu === group.label ? "rotate-180" : "rotate-0"
+                      )}
+                    />
+                  </button>
+
+                  <div
+                    className={cn(
+                      "absolute left-0 top-full min-w-[230px] pt-3 transition-all duration-200",
+                      openDesktopMenu === group.label
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 -translate-y-1 pointer-events-none"
+                    )}
+                  >
+                    <div className="rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-2">
+                      {group.items.map((item) => (
+                        <div
+                          key={`${group.label}-${item.href}`}
+                          className="relative"
+                          onMouseEnter={() => setOpenDesktopSubMenu(`${group.label}-${item.href}`)}
+                        >
+                          <Link
+                            href={item.href}
+                            className={cn(
+                              "flex items-center justify-between rounded-lg px-3 py-2.5 text-sm transition-colors",
+                              isItemActive(item.href)
+                                ? "bg-primary/10 text-foreground"
+                                : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                            )}
+                          >
+                            <span>{item.label}</span>
+                            {item.children && item.children.length > 0 ? <ChevronDown className="w-3.5 h-3.5 -rotate-90" /> : null}
+                          </Link>
+
+                          {item.children && item.children.length > 0 ? (
+                            <div
+                              className={cn(
+                                "absolute left-full top-0 ml-2 w-[280px] rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-2 transition-all duration-200",
+                                openDesktopSubMenu === `${group.label}-${item.href}`
+                                  ? "opacity-100 translate-x-0 pointer-events-auto"
+                                  : "opacity-0 translate-x-1 pointer-events-none"
+                              )}
+                            >
+                              <p className="px-3 py-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">Details</p>
+                              <ul className="space-y-1">
+                                {item.children.map((child) => (
+                                  <li
+                                    key={child}
+                                    className="rounded-md px-3 py-2 text-xs text-muted-foreground bg-secondary/40"
+                                  >
+                                    {child}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -175,44 +366,128 @@ export function Header() {
             
             {/* Navigation */}
             <nav className="flex flex-col gap-2 flex-1 overflow-y-auto">
-              {navItems.map((item, index) => {
-                const isActive = activeSection === item.href.replace('/#', '')
+              {navGroups.map((group, index) => {
+                const isOpen = openMobileGroup === group.label
+                const groupActive = isGroupActive(group)
+
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className={cn(
-                      "group flex items-baseline gap-3 py-3 px-4 rounded-lg transition-all duration-200",
-                      isActive 
-                        ? "bg-primary/10" 
-                        : "hover:bg-secondary"
-                    )}
+                  <div
+                    key={group.label}
+                    className="rounded-lg"
                     style={{
                       animationDelay: `${index * 50}ms`,
-                      animation: isMobileMenuOpen ? 'slideIn 0.3s ease-out forwards' : 'none',
+                      animation: isMobileMenuOpen ? "slideIn 0.3s ease-out forwards" : "none",
                       opacity: isMobileMenuOpen ? 1 : 0,
                     }}
                   >
-                    <span 
+                    <button
+                      type="button"
+                      onClick={() => handleMobileGroupToggle(group.label)}
                       className={cn(
-                        "text-xs font-mono transition-colors",
-                        isActive ? "text-primary" : "text-muted-foreground"
+                        "w-full flex items-center justify-between gap-3 py-3 px-4 rounded-lg transition-all duration-200",
+                        groupActive || isOpen ? "bg-primary/10" : "hover:bg-secondary"
                       )}
-                      style={isActive ? { color: "#203eec" } : {}}
                     >
-                      {item.number}
-                    </span>
-                    <span 
+                      <span className="flex items-baseline gap-3">
+                        <span
+                          className={cn(
+                            "text-xs font-mono transition-colors",
+                            groupActive || isOpen ? "text-primary" : "text-muted-foreground"
+                          )}
+                          style={groupActive || isOpen ? { color: "#203eec" } : {}}
+                        >
+                          {group.number}
+                        </span>
+                        <span
+                          className={cn(
+                            "text-xl font-semibold transition-colors",
+                            groupActive || isOpen ? "text-primary" : "text-foreground"
+                          )}
+                          style={groupActive || isOpen ? { color: "#203eec" } : {}}
+                        >
+                          {group.label}
+                        </span>
+                      </span>
+                      <ChevronDown
+                        className={cn(
+                          "w-4 h-4 text-muted-foreground transition-transform duration-200",
+                          isOpen ? "rotate-180" : "rotate-0"
+                        )}
+                      />
+                    </button>
+
+                    <div
                       className={cn(
-                        "text-xl font-semibold transition-colors",
-                        isActive ? "text-primary" : "text-foreground"
+                        "grid transition-all duration-200",
+                        isOpen ? "grid-rows-[1fr] opacity-100 mt-1" : "grid-rows-[0fr] opacity-0"
                       )}
-                      style={isActive ? { color: "#203eec" } : {}}
                     >
-                      {item.label}
-                    </span>
-                  </Link>
+                      <div className="overflow-hidden">
+                        <div className="pl-6 pr-2 pb-2 pt-1 space-y-1">
+                          {group.items.map((item) => {
+                            const subMenuKey = `${group.label}-${item.href}`
+                            const isSubOpen = openMobileSubMenu === subMenuKey
+
+                            return (
+                              <div key={subMenuKey}>
+                                <div className="flex items-center gap-1">
+                                  <Link
+                                    href={item.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={cn(
+                                      "flex-1 rounded-md px-3 py-2.5 text-sm transition-colors",
+                                      isItemActive(item.href)
+                                        ? "bg-primary/10 text-foreground"
+                                        : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                                    )}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                  {item.children && item.children.length > 0 ? (
+                                    <button
+                                      type="button"
+                                      onClick={() => handleMobileSubMenuToggle(subMenuKey)}
+                                      className="p-2 rounded-md hover:bg-secondary transition-colors"
+                                      aria-label={`Toggle ${item.label} details`}
+                                    >
+                                      <ChevronDown
+                                        className={cn(
+                                          "w-4 h-4 text-muted-foreground transition-transform duration-200",
+                                          isSubOpen ? "rotate-180" : "rotate-0"
+                                        )}
+                                      />
+                                    </button>
+                                  ) : null}
+                                </div>
+
+                                {item.children && item.children.length > 0 ? (
+                                  <div
+                                    className={cn(
+                                      "grid transition-all duration-200",
+                                      isSubOpen ? "grid-rows-[1fr] opacity-100 mt-1" : "grid-rows-[0fr] opacity-0"
+                                    )}
+                                  >
+                                    <div className="overflow-hidden">
+                                      <ul className="ml-2 space-y-1">
+                                        {item.children.map((child) => (
+                                          <li
+                                            key={child}
+                                            className="rounded-md px-3 py-2 text-xs text-muted-foreground bg-secondary/50"
+                                          >
+                                            {child}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                ) : null}
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 )
               })}
             </nav>

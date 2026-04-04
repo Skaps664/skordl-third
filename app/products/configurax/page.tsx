@@ -1,67 +1,64 @@
 export const metadata = {
-  title: "NewsHub - News Aggregator by Skord Labs | Pakistan's Top Software Company",
-  description: "Stay informed with NewsHub. Personalized news feeds, global coverage, and smart curation by Pakistan's leading software development company.",
-  keywords: ["NewsHub", "news aggregator", "news app Pakistan", "personalized news"],
+  title: "ConfiguraX - Production-ready Configuration Platform | Skord Labs",
+  description:
+    "Create intelligent product configurators with ConfiguraX, an API-first platform with visual builder, enterprise security, and global-scale infrastructure.",
+  keywords: ["ConfiguraX", "configuration platform", "API-first SaaS", "product configurator"],
 }
 
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
-import { ArrowRight, Newspaper, Globe, Bookmark, CheckCircle2, ArrowUpRight, Rss, Search } from "lucide-react"
+import { ArrowRight, Zap, ShieldCheck, Globe2, CheckCircle2, ArrowUpRight, Code2, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
 const features = [
   {
-    icon: Globe,
-    title: "Curated News Feed",
-    description: "Hand-picked stories from trusted sources across tech, business, and world news."
+    icon: Code2,
+    title: "Developer Friendly API",
+    description: "RESTful API and docs-first workflow with SDK-ready integration for modern teams.",
   },
   {
-    icon: Bookmark,
-    title: "Save for Later",
-    description: "Bookmark articles and create reading lists for later consumption."
+    icon: Zap,
+    title: "Lightning Fast Validation",
+    description: "Sub-millisecond response path designed for instant configuration checks.",
   },
   {
-    icon: Search,
-    title: "Powerful Search",
-    description: "Find articles by keyword, topic, or source with advanced search filters."
+    icon: ShieldCheck,
+    title: "Enterprise Security",
+    description: "SOC 2-ready security posture with encryption, access controls, and SSO support.",
   },
   {
-    icon: Rss,
-    title: "RSS Integration",
-    description: "Import your favorite RSS feeds and manage everything in one place."
-  }
+    icon: Globe2,
+    title: "Global Scale",
+    description: "Distributed architecture for high-volume configuration traffic and global uptime.",
+  },
 ]
 
 const benefits = [
-  "Clean, modern interface",
-  "Ad-free reading experience",
-  "Dark mode support",
-  "Multiple news sources",
-  "Topic categorization",
-  "Trending stories",
-  "Personalized feed",
-  "Mobile responsive",
-  "Fast loading times",
-  "Privacy-focused"
+  "API-first configuration architecture",
+  "Visual builder for rules and logic",
+  "Advanced analytics on configuration behavior",
+  "Enterprise-grade security controls",
+  "Usage-ready plans from Starter to Enterprise",
+  "Supports manufacturing, automotive, tech, and retail use cases",
 ]
 
 const metrics = [
-  { value: "10K+", label: "Daily active readers" },
-  { value: "50+", label: "News sources" },
-  { value: "100K+", label: "Articles curated" },
-  { value: "Free", label: "Forever" }
+  { value: "10k+", label: "Developers" },
+  { value: "99.9%", label: "Uptime SLA" },
+  { value: "1M+", label: "API calls/day" },
+  { value: "Live", label: "Production platform" },
 ]
 
-export default function NewsHubPage() {
+export default function ConfiguraXPage() {
   return (
     <>
       <Header />
       <main className="pt-20">
         <section className="py-16 md:py-24 lg:py-32 border-b border-border relative overflow-hidden">
           <div className="absolute -right-32 md:-right-48 top-32 md:top-40 w-[500px] h-[500px] md:w-[750px] md:h-[750px] pointer-events-none -z-10 opacity-30">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 blur-3xl" />
+            <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 blur-3xl" />
           </div>
 
           <div className="max-w-[1280px] mx-auto px-6 md:px-12">
@@ -71,11 +68,11 @@ export default function NewsHubPage() {
                   <span className="text-xs font-medium px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
                     Live
                   </span>
-                  <span className="text-sm text-muted-foreground">Media • Content</span>
+                  <span className="text-sm text-muted-foreground">SaaS • API Platform</span>
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-6 md:mb-8">
-                  <span 
+                  <span
                     style={{
                       background: "linear-gradient(135deg, #ff006e 0%, #8b5cf6 33%, #203eec 66%, #00d4ff 100%)",
                       WebkitBackgroundClip: "text",
@@ -83,45 +80,45 @@ export default function NewsHubPage() {
                       backgroundClip: "text",
                     }}
                   >
-                    NewsHub
+                    ConfiguraX
                   </span>
                   <br />
-                  <span className="text-3xl md:text-4xl lg:text-5xl">
-                    Modern News Platform
-                  </span>
+                  <span className="text-3xl md:text-4xl lg:text-5xl">Production-ready configuration platform</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-                  Curated news and insights delivered with a beautiful, modern interface. 
-                  Stay informed without the clutter and ads.
+                  Build better with API-first product configuration logic, enterprise controls, and scalable infrastructure
+                  built for modern SaaS teams.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/contact"
+                    href="https://www.configurax.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-white rounded-full transition-all hover:shadow-lg"
-                    style={{ 
+                    style={{
                       background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
-                      boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)"
+                      boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
                     }}
                   >
-                    Start Reading
-                    <ArrowRight className="w-5 h-5" />
+                    Visit ConfiguraX
+                    <ArrowUpRight className="w-5 h-5" />
                   </Link>
                   <Link
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium border border-border rounded-full hover:bg-secondary transition-all"
                   >
-                    Learn More
-                    <ArrowUpRight className="w-5 h-5" />
+                    Build Similar SaaS
+                    <ArrowRight className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-transparent border border-border">
                 <Image
-                  src="https://placehold.co/800x600/203eec/ffffff/png?text=NewsHub+Platform"
-                  alt="NewsHub Platform"
+                  src="/images/bg-2.png"
+                  alt="ConfiguraX"
                   fill
                   className="object-cover"
                 />
@@ -135,7 +132,7 @@ export default function NewsHubPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {metrics.map((metric, index) => (
                 <div key={index} className="text-center">
-                  <div 
+                  <div
                     className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2"
                     style={{
                       background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
@@ -156,17 +153,12 @@ export default function NewsHubPage() {
         <section className="py-16 md:py-24 lg:py-32 border-b border-border">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12">
             <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">
-                News reading, reimagined
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                A modern news platform built for readers who value quality content and clean design.
-              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">Everything needed to ship</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className="p-8 border border-border rounded-2xl hover:border-foreground/20 transition-all duration-300 bg-card/50 backdrop-blur-sm"
                 >
@@ -188,9 +180,7 @@ export default function NewsHubPage() {
         <section className="py-16 md:py-24 lg:py-32 border-b border-border bg-secondary/30">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12">
             <div className="max-w-3xl mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">
-                Everything you need
-              </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">Platform highlights</h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -207,22 +197,23 @@ export default function NewsHubPage() {
         <section className="py-16 md:py-24 lg:py-32">
           <div className="max-w-[1280px] mx-auto px-6 md:px-12">
             <div className="max-w-3xl mx-auto text-center">
+              <BarChart3 className="w-12 h-12 mx-auto mb-6" style={{ color: "#203eec" }} />
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">
-                Stay informed without the noise
+                Need a custom configuration SaaS?
               </h2>
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                Join thousands of readers who trust NewsHub for quality news without distractions.
+                We architect and ship API-first products with enterprise reliability, performance, and global readiness.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-white rounded-full transition-all hover:shadow-lg"
-                style={{ 
+                style={{
                   background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
-                  boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)"
+                  boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
                 }}
               >
-                Start Reading Free
-                <ArrowRight className="w-5 h-5" />
+                Talk to Skord Labs
+                <ArrowUpRight className="w-5 h-5" />
               </Link>
             </div>
           </div>

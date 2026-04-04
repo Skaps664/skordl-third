@@ -1,190 +1,111 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
 import { ArrowLeft, ArrowUpRight } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "Physics-Informed Neural Networks for Structural Design",
-    slug: "physics-informed-neural-networks-structural-design",
-    excerpt: "Applying PINN methodology to structural weight prediction. Research on integrating domain knowledge with neural networks.",
-    content: `
-      <h2>Introduction</h2>
-      <p>Physics-Informed Neural Networks (PINNs) represent a revolutionary approach to solving complex engineering problems by seamlessly integrating physical laws with machine learning techniques.</p>
-
-      <h2>The Challenge</h2>
-      <p>Traditional structural design optimization often requires extensive computational resources and expert knowledge. We sought to develop a more efficient approach that could predict structural weights with high accuracy while incorporating fundamental physics principles.</p>
-
-      <h2>Our Approach</h2>
-      <p>By implementing PINN methodology, we created a neural network that inherently understands the laws of physics. The network was trained on both experimental data and physics-based loss functions, ensuring that solutions remain physically consistent.</p>
-
-      <h2>Results</h2>
-      <p>The resulting model achieved 95% accuracy in weight predictions while reducing computational time by 80% compared to traditional finite element analysis methods.</p>
-
-      <h2>Future Implications</h2>
-      <p>This work opens new possibilities for rapid prototyping and optimization in structural engineering, potentially transforming how we approach complex design problems.</p>
-    `,
-    image: "/images/bg-1.png",
-    date: "Jan 2025",
-    readTime: "Research Paper",
-    category: "AI Research",
-  },
-  {
-    id: 2,
-    title: "Scalable ML Integration in Production Systems",
-    slug: "scalable-ml-integration-production-systems",
-    excerpt: "Lessons from deploying machine learning models at scale. Bridging the gap between research and production engineering.",
-    content: `
-      <h2>The Production ML Challenge</h2>
-      <p>Deploying machine learning models in production environments presents unique challenges that go beyond model accuracy and performance metrics.</p>
-
-      <h2>Key Lessons Learned</h2>
-      <p>Through multiple large-scale deployments, we've identified critical factors for successful ML integration: robust monitoring, automated retraining pipelines, and comprehensive error handling.</p>
-
-      <h2>Architecture Patterns</h2>
-      <p>We developed a modular architecture that separates model serving, monitoring, and retraining components, allowing for independent scaling and updates.</p>
-
-      <h2>Monitoring and Maintenance</h2>
-      <p>Comprehensive monitoring includes not just model performance but also system health, data quality, and business metrics alignment.</p>
-    `,
-    image: "/images/bg-2.png",
-    date: "Dec 2024",
-    readTime: "Technical Deep-Dive",
-    category: "Engineering",
-  },
-  {
-    id: 3,
-    title: "Backend Architecture for Data-Intensive Applications",
-    slug: "backend-architecture-data-intensive-applications",
-    excerpt: "Building systems that handle complex data pipelines. Design patterns and best practices for distributed data engineering.",
-    content: `
-      <h2>Data-Intensive Application Challenges</h2>
-      <p>As applications grow in complexity and data volume, traditional monolithic architectures become insufficient for handling the demands of modern data processing.</p>
-
-      <h2>Distributed Systems Design</h2>
-      <p>Our approach focuses on building resilient, scalable systems that can handle millions of data points while maintaining low latency and high availability.</p>
-
-      <h2>Key Components</h2>
-      <ul>
-        <li>Event-driven architecture for real-time processing</li>
-        <li>Microservices for independent scaling</li>
-        <li>Advanced caching strategies</li>
-        <li>Comprehensive monitoring and alerting</li>
-      </ul>
-
-      <h2>Performance Optimization</h2>
-      <p>Through careful optimization of data flows and processing pipelines, we achieved sub-second response times even with complex analytical queries.</p>
-    `,
-    image: "/images/bg-3.png",
-    date: "Nov 2024",
-    readTime: "Architecture Guide",
-    category: "Backend",
-  },
-  {
-    id: 4,
-    title: "Advanced Prompt Engineering Techniques",
-    slug: "advanced-prompt-engineering-techniques",
-    excerpt: "Mastering the art of crafting effective prompts for large language models. Techniques that improve AI output quality.",
-    content: `
-      <h2>The Art of Prompt Engineering</h2>
-      <p>Effective prompt engineering is crucial for getting high-quality outputs from large language models. It's both an art and a science that requires understanding model behavior and human-AI interaction patterns.</p>
-
-      <h2>Core Techniques</h2>
-      <p>We developed a systematic approach to prompt engineering that includes context setting, role definition, output formatting, and iterative refinement.</p>
-
-      <h2>Advanced Strategies</h2>
-      <ul>
-        <li>Chain-of-thought prompting for complex reasoning</li>
-        <li>Few-shot learning techniques</li>
-        <li>Context window optimization</li>
-        <li>Output parsing and validation</li>
-      </ul>
-
-      <h2>Practical Applications</h2>
-      <p>These techniques have been successfully applied across various domains including code generation, content creation, and analytical tasks.</p>
-    `,
-    image: "/images/bg-1.png",
-    date: "Oct 2024",
-    readTime: "Tutorial",
-    category: "AI",
-  },
-  {
-    id: 5,
-    title: "Building Resilient Microservices",
-    slug: "building-resilient-microservices",
-    excerpt: "Design principles for creating fault-tolerant distributed systems. From theory to production implementation.",
-    content: `
-      <h2>Microservices Resilience</h2>
-      <p>Building resilient microservices requires a holistic approach that addresses failures at every level of the system architecture.</p>
-
-      <h2>Core Principles</h2>
-      <ul>
-        <li>Circuit breaker patterns for fault isolation</li>
-        <li>Graceful degradation strategies</li>
-        <li>Automated recovery mechanisms</li>
-        <li>Comprehensive monitoring and alerting</li>
-      </ul>
-
-      <h2>Implementation Strategies</h2>
-      <p>We implemented these patterns using industry-standard tools and frameworks, ensuring compatibility and maintainability.</p>
-
-      <h2>Testing and Validation</h2>
-      <p>Rigorous testing including chaos engineering and load testing ensures systems can handle real-world failure scenarios.</p>
-    `,
-    image: "/images/bg-2.png",
-    date: "Sep 2024",
-    readTime: "Guide",
-    category: "Architecture",
-  },
-  {
-    id: 6,
-    title: "Computer Vision in Manufacturing",
-    slug: "computer-vision-manufacturing",
-    excerpt: "Implementing AI-powered quality control systems. Real-world applications and technical challenges.",
-    content: `
-      <h2>Computer Vision in Industry</h2>
-      <p>Computer vision technologies are revolutionizing manufacturing quality control by providing automated, consistent inspection capabilities.</p>
-
-      <h2>Technical Implementation</h2>
-      <p>Our systems combine advanced deep learning models with real-time processing capabilities to detect defects with high accuracy.</p>
-
-      <h2>Key Challenges Solved</h2>
-      <ul>
-        <li>Variable lighting conditions</li>
-        <li>Complex defect patterns</li>
-        <li>High-speed production lines</li>
-        <li>Integration with existing systems</li>
-      </ul>
-
-      <h2>Business Impact</h2>
-      <p>Implementation resulted in 90% defect detection rates and significant reduction in waste and rework costs.</p>
-    `,
-    image: "/images/bg-3.png",
-    date: "Aug 2024",
-    readTime: "Case Study",
-    category: "Computer Vision",
-  },
-]
+import { blogPosts } from "@/lib/blog-posts"
+import { absoluteUrl, buildMetadata } from "@/lib/seo"
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find(p => p.slug === params.slug)
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = blogPosts.find((item) => item.slug === slug)
+
+  if (!post) {
+    return {
+      title: "Blog Post Not Found | Skord Labs",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }
+  }
+
+  return buildMetadata({
+    title: `${post.title} | Skord Labs Blog`,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    type: "article",
+    keywords: [post.category, "Skord Labs blog", "software engineering insights"],
+  })
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = blogPosts.find(p => p.slug === slug)
 
   if (!post) {
     notFound()
   }
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: absoluteUrl(post.image),
+    author: {
+      "@type": "Organization",
+      name: "Skord Labs",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Skord Labs",
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/favicon/android-chrome-512x512.png"),
+      },
+    },
+    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+    articleSection: post.category,
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: absoluteUrl("/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: absoluteUrl("/blog"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: absoluteUrl(`/blog/${post.slug}`),
+      },
+    ],
+  }
+
   return (
     <>
+      <Script
+        id={`blog-posting-schema-${post.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <Script
+        id={`blog-breadcrumb-schema-${post.slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-20 md:pt-32">
         <article className="py-20 md:py-32">

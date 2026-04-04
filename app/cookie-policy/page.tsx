@@ -5,6 +5,7 @@ import { Cookie, Settings, Eye, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cookie-policy" },
   title: "Cookie Policy | Skord Labs - Pakistan's Top Software Company",
   description: "Learn about how Skord Labs uses cookies and tracking technologies on our website. Understand your cookie preferences and privacy options.",
   keywords: ["cookie policy", "cookies", "tracking", "Skord Labs cookies"],
@@ -186,7 +187,7 @@ export default function CookiePolicyPage() {
             <div className="space-y-2 text-muted-foreground">
               <p><strong>Skord Labs</strong></p>
               <p>Peshawar, Pakistan</p>
-              <p>Email: <a href="mailto:privacy@skordl.com" className="underline" style={{ color: "#203eec" }}>privacy@skordl.com</a></p>
+              <p>Email: <a href="mailto:support@skordlabs.com" className="underline" style={{ color: "#203eec" }}>support@skordlabs.com</a></p>
               <p>Phone: <a href="tel:+923259327819" className="underline" style={{ color: "#203eec" }}>+92 325 9327819</a></p>
             </div>
           </div>

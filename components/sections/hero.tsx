@@ -6,7 +6,7 @@ import { ArrowDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export function Hero() {
-  const titleText = "AI systems and software development laboratory"
+  const titleText = "We don't just exist. We research, develop and notify the world"
   const words = titleText.split(" ")
   const [maskReveal, setMaskReveal] = useState(0)
   const [opacity, setOpacity] = useState(0)
@@ -52,11 +52,11 @@ export function Hero() {
             {words.map((word, index) => (
               <span
                 key={index}
-                className={`hero-word my-0 py-1 md:py-2 font-mono font-normal text-4xl sm:text-5xl md:text-7xl ${word === "AI" ? "ai-gradient-word" : ""}`}
+                className={`hero-word my-0 py-1 md:py-2 font-mono font-normal text-4xl sm:text-5xl md:text-7xl ${index <= 3 ? "ai-gradient-word" : ""}`}
                 style={{
                   animationDelay: `${index * 0.1}s`,
                   marginRight: index < words.length - 1 ? "0.25em" : "0",
-                  ...(word === "AI"
+                  ...(index <= 3
                     ? {
                         background: "linear-gradient(135deg, #ff006e 0%, #8b5cf6 33%, #203eec 66%, #00d4ff 100%)",
                         WebkitBackgroundClip: "text",
@@ -74,7 +74,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 md:mt-8 max-w-xl leading-relaxed text-left text-base md:text-lg text-zinc-500 ml-0">
-            We design and deploy AI systems, AI automations, AI bots, and custom software for modern businesses. From strategy to launch, we build production-ready platforms that create measurable growth.
+            We help ambitious teams research ideas, build stronger products, and scale with confidence. From AI systems to custom software, we partner with you to ship, learn, and grow together.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 mt-8 md:mt-10">
@@ -108,7 +108,7 @@ export function Hero() {
 
       <div className="w-full mt-8">
         <Image
-          src="./under-hero-2.webp"
+          src="/under-hero-2.webp"
           alt="Designer workspace"
           width={1200}
           height={800}

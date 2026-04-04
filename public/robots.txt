@@ -5,4 +5,4 @@ Allow: /
 # Disallow admin or private areas (add if needed)
 # Disallow: /admin/
 
-Sitemap: https://skordl.com/sitemap.xml
+Sitemap: https://www.skordlabs.com/sitemap.xml

@@ -46,8 +46,8 @@ export function CalendlyBooking() {
         <div className="mt-12 text-center">
           <p className="text-muted-foreground text-sm">
             Prefer email? Reach out to us at{" "}
-            <a href="mailto:hello@skordl.com" className="font-semibold hover:underline" style={{ color: "#203eec" }}>
-              hello@skordl.com
+            <a href="mailto:hello@skordlabs.com" className="font-semibold hover:underline" style={{ color: "#203eec" }}>
+              hello@skordlabs.com
             </a>
           </p>
         </div>

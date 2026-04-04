@@ -1,5 +1,4 @@
-"use client"
-
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
@@ -7,69 +6,16 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { SectionTitle } from "@/components/ui/section-title"
 import { GradientBar } from "@/components/ui/gradient-bar"
+import { blogPosts } from "@/lib/blog-posts"
+import { buildMetadata } from "@/lib/seo"
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "Physics-Informed Neural Networks for Structural Design",
-    slug: "physics-informed-neural-networks-structural-design",
-    excerpt: "Applying PINN methodology to structural weight prediction. Research on integrating domain knowledge with neural networks.",
-    image: "/images/bg-1.png",
-    date: "Jan 2025",
-    readTime: "Research Paper",
-    category: "AI Research",
-  },
-  {
-    id: 2,
-    title: "Scalable ML Integration in Production Systems",
-    slug: "scalable-ml-integration-production-systems",
-    excerpt: "Lessons from deploying machine learning models at scale. Bridging the gap between research and production engineering.",
-    image: "/images/bg-2.png",
-    date: "Dec 2024",
-    readTime: "Technical Deep-Dive",
-    category: "Engineering",
-  },
-  {
-    id: 3,
-    title: "Backend Architecture for Data-Intensive Applications",
-    slug: "backend-architecture-data-intensive-applications",
-    excerpt: "Building systems that handle complex data pipelines. Design patterns and best practices for distributed data engineering.",
-    image: "/images/bg-3.png",
-    date: "Nov 2024",
-    readTime: "Architecture Guide",
-    category: "Backend",
-  },
-  {
-    id: 4,
-    title: "Advanced Prompt Engineering Techniques",
-    slug: "advanced-prompt-engineering-techniques",
-    excerpt: "Mastering the art of crafting effective prompts for large language models. Techniques that improve AI output quality.",
-    image: "/images/bg-1.png",
-    date: "Oct 2024",
-    readTime: "Tutorial",
-    category: "AI",
-  },
-  {
-    id: 5,
-    title: "Building Resilient Microservices",
-    slug: "building-resilient-microservices",
-    excerpt: "Design principles for creating fault-tolerant distributed systems. From theory to production implementation.",
-    image: "/images/bg-2.png",
-    date: "Sep 2024",
-    readTime: "Guide",
-    category: "Architecture",
-  },
-  {
-    id: 6,
-    title: "Computer Vision in Manufacturing",
-    slug: "computer-vision-manufacturing",
-    excerpt: "Implementing AI-powered quality control systems. Real-world applications and technical challenges.",
-    image: "/images/bg-3.png",
-    date: "Aug 2024",
-    readTime: "Case Study",
-    category: "Computer Vision",
-  },
-]
+export const metadata: Metadata = buildMetadata({
+  title: "Blog | Skord Labs Research and Engineering Insights",
+  description:
+    "Read Skord Labs blog posts on AI research, software engineering, architecture, and practical product execution.",
+  path: "/blog",
+  keywords: ["AI blog", "software engineering blog", "technical insights"],
+})
 
 export default function BlogPage() {
   const featuredPost = blogPosts[0]
@@ -88,7 +34,8 @@ export default function BlogPage() {
               </SectionTitle>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Deep dives into AI research, software engineering, and technical innovation.
-                Sharing knowledge from our journey in building cutting-edge solutions.
+                Sharing knowledge from our journey in building cutting-edge solutions and helping teams
+                find talent, improve execution, and grow sustainably.
               </p>
             </div>
 

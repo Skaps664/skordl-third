@@ -1,10 +1,18 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { ArrowRight, Shield, Database, Layers, GitBranch, CheckCircle2, ArrowUpRight, Lock, Globe, Cpu } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Solutions for Enterprise Teams | Skord Labs",
+  description:
+    "Enterprise-grade software modernization, secure infrastructure, and scalable systems for high-volume operations.",
+  path: "/solutions/for-enterprise",
+  keywords: ["enterprise software", "digital transformation", "legacy modernization"],
+})
 
 const enterpriseBenefits = [
   {
@@ -102,7 +110,8 @@ export default function ForEnterprisePage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
                 We build mission-critical systems for organizations that can't afford downtime. 
-                From legacy modernization to greenfield development, we deliver enterprise-grade solutions.
+                From legacy modernization to greenfield development, we deliver enterprise-grade solutions
+                and guide internal teams with stronger talent and capability growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

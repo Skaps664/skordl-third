@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F3F5F8"/>
+  <rect x="0" y="0" width="1600" height="110" fill="white"/>
+  <text x="60" y="68" fill="#0F2A5A" font-family="Arial, sans-serif" font-size="52" font-weight="700">dekord's Inventory System</text>
+  <rect x="30" y="140" width="280" height="720" rx="20" fill="white" stroke="#D9E1EE"/>
+  <rect x="340" y="190" width="390" height="160" rx="16" fill="white" stroke="#D9E1EE"/>
+  <rect x="760" y="190" width="390" height="160" rx="16" fill="white" stroke="#D9E1EE"/>
+  <rect x="1180" y="190" width="390" height="160" rx="16" fill="white" stroke="#D9E1EE"/>
+  <rect x="340" y="390" width="1230" height="470" rx="16" fill="white" stroke="#D9E1EE"/>
+</svg>

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter_Tight } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 import { CookieConsent } from "@/components/ui/cookie-consent"
 import { CallCTA } from "@/components/ui/call-cta"
 import { BackToTop } from "@/components/ui/back-to-top"
@@ -14,6 +15,7 @@ const interTight = Inter_Tight({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.skordlabs.com"),
   title: "Skord Labs | Pakistan's Top Software Development Company",
   description: "Pakistan's leading software development company. Building production-grade software while conducting applied research. A development lab where commercial delivery meets scientific rigor.",
   keywords: ["software development Pakistan", "Skord Labs", "AI development", "custom software", "technical consulting", "software company Pakistan", "MVP development", "best software company Pakistan"],
@@ -59,9 +61,76 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Skord Labs",
+    url: "https://www.skordlabs.com",
+    logo: "https://www.skordlabs.com/favicon/android-chrome-512x512.png",
+    email: "hello@skordlabs.com",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: "hello@skordlabs.com",
+        contactType: "customer support",
+        areaServed: "PK",
+        availableLanguage: ["English"],
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Software and AI Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Solutions Development",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom Software Development",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Technical Consulting",
+          },
+        },
+      ],
+    },
+  }
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Skord Labs",
+    url: "https://www.skordlabs.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.skordlabs.com/blog?query={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  }
+
   return (
     <html lang="en">
       <body className={`${interTight.className} font-sans antialiased`}>
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <Script
+          id="website-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <CallCTAProvider>
           {children}
           <CookieConsent />

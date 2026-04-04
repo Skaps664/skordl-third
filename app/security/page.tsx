@@ -5,6 +5,7 @@ import { Shield, Lock, Server, Eye, AlertTriangle, CheckCircle2 } from "lucide-r
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/security" },
   title: "Security | Skord Labs - Secure Software Development Company Pakistan",
   description: "Learn about security practices at Skord Labs, Pakistan's top software company. We prioritize data security and compliance in all our solutions.",
   keywords: ["software security", "data security", "secure development Pakistan", "Skord Labs security"],
@@ -121,7 +122,7 @@ export default function SecurityPage() {
             <div className="p-6 border border-border rounded-xl bg-card">
               <h3 className="font-semibold mb-4">How to Report:</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Email: <a href="mailto:security@skordl.com" className="underline" style={{ color: "#203eec" }}>security@skordl.com</a></li>
+                <li>• Email: <a href="mailto:team@skordlabs.com" className="underline" style={{ color: "#203eec" }}>team@skordlabs.com</a></li>
                 <li>• Include detailed description of the vulnerability</li>
                 <li>• Provide steps to reproduce the issue</li>
                 <li>• Do not publicly disclose the issue until we've addressed it</li>

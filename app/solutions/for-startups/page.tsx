@@ -1,10 +1,18 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { ArrowRight, Rocket, TrendingUp, Users, Zap, CheckCircle2, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Solutions for Startups | Skord Labs",
+  description:
+    "MVP development, startup architecture, and technical guidance to help founders launch faster and scale with confidence.",
+  path: "/solutions/for-startups",
+  keywords: ["startup development", "MVP development", "technical co-founder support"],
+})
 
 const startupBenefits = [
   {
@@ -95,7 +103,8 @@ export default function ForStartupsPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
                 We partner with ambitious founders to build MVPs, validate product-market fit, and scale 
-                technical infrastructure. From concept to Series A and beyond.
+                technical infrastructure. We also help founders find real talent, guide early teams,
+                and grow from concept to Series A and beyond.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

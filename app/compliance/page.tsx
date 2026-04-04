@@ -5,6 +5,7 @@ import { CheckCircle2, FileCheck, Globe, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/compliance" },
   title: "Compliance | Skord Labs - Compliant Software Solutions Pakistan",
   description: "Skord Labs maintains compliance with international standards. Learn about our certifications and regulatory compliance as Pakistan's top software company.",
   keywords: ["compliance", "GDPR compliance", "ISO 27001", "software compliance Pakistan"],
@@ -160,7 +161,7 @@ export default function CompliancePage() {
             <div className="space-y-2 text-muted-foreground">
               <p><strong>Skord Labs</strong></p>
               <p>Peshawar, Pakistan</p>
-              <p>Email: <a href="mailto:compliance@skordl.com" className="underline" style={{ color: "#203eec" }}>compliance@skordl.com</a></p>
+              <p>Email: <a href="mailto:compliance@skordlabs.com" className="underline" style={{ color: "#203eec" }}>compliance@skordlabs.com</a></p>
               <p>Phone: <a href="tel:+923259327819" className="underline" style={{ color: "#203eec" }}>+92 325 9327819</a></p>
             </div>
           </div>

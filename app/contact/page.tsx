@@ -6,6 +6,7 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us | Skord Labs - Pakistan's Top Software Company",
   description: "Get in touch with Skord Labs, Pakistan's leading software development company. Let's discuss your project and build something amazing together.",
   keywords: ["contact Skord Labs", "software development inquiry", "Pakistan software company contact", "get quote software development"],
@@ -40,7 +41,8 @@ export default function ContactPage() {
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                 Whether you need a technical partner for development, research collaboration, 
-                or expert consulting—we'd love to discuss your project and how we can help bring it to life.
+                or expert consulting—we'd love to discuss your project. We also help you identify strong talent,
+                guide team growth, and build with clarity from day one.
               </p>
             </div>
           </div>
@@ -61,10 +63,10 @@ export default function ContactPage() {
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg mb-2">Email</h3>
                       <a
-                        href="mailto:hello@skordl.com"
+                        href="mailto:hello@skordlabs.com"
                         className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                       >
-                        hello@skordl.com
+                        hello@skordlabs.com
                       </a>
                     </div>
                   </div>

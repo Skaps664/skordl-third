@@ -121,7 +121,7 @@ export default function CastAIProPage() {
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-transparent border border-border">
                 <Image
-                  src="https://placehold.co/800x600/6d28d9/ffffff/png?text=CastAIPro+Studio"
+                  src="/images/work-crypto.png"
                   alt="CastAIPro Platform"
                   fill
                   className="object-cover"

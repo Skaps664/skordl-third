@@ -22,9 +22,9 @@ const supportChannels = [
     icon: Mail,
     title: "Email Support",
     description: "Send us a detailed message and we'll respond within 24 hours.",
-    availability: "support@skordl.com",
+    availability: "support@skordlabs.com",
     action: "Send Email",
-    href: "mailto:support@skordl.com"
+    href: "mailto:support@skordlabs.com"
   },
   {
     icon: Phone,
@@ -105,7 +105,8 @@ export default function SupportPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Expert technical support when you need it. Our engineering team is here to help 
-                with integration, troubleshooting, and technical questions.
+                with integration, troubleshooting, and technical questions while also guiding your team
+                toward stronger skills and delivery confidence.
               </p>
             </div>
           </div>

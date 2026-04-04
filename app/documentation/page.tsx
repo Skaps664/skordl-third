@@ -85,7 +85,8 @@ export default function DocumentationPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Comprehensive technical documentation, API references, and developer resources 
-                for integrating with our platforms and tools.
+                for integrating with our platforms and tools. We also guide teams with practical implementation
+                support so talent can learn faster and deliver better.
               </p>
             </div>
           </div>

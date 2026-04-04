@@ -1,5 +1,4 @@
-"use client"
-
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, Calendar, Users, Award } from "lucide-react"
@@ -7,6 +6,15 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { SectionTitle } from "@/components/ui/section-title"
 import { GradientBar } from "@/components/ui/gradient-bar"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Activities | Skord Labs",
+  description:
+    "Explore Skord Labs activities including research events, publications, open-source contributions, and community programs.",
+  path: "/activities",
+  keywords: ["tech activities", "AI events", "research publications"],
+})
 
 const activities = [
   {
@@ -85,7 +93,8 @@ export default function ActivitiesPage() {
               </SectionTitle>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                 Our contributions to the tech community, research publications, and industry events.
-                Sharing knowledge and building connections in the AI and software engineering space.
+                Sharing knowledge, building connections, and helping people discover opportunities to grow
+                with strong technical teams.
               </p>
             </div>
 

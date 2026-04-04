@@ -1,10 +1,18 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { ArrowRight, Users, Code, Zap, Award, CheckCircle2, ArrowUpRight, Handshake, Target } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Solutions for Agencies | Skord Labs",
+  description:
+    "White-label engineering and team augmentation services for agencies that need reliable technical delivery at scale.",
+  path: "/solutions/for-agencies",
+  keywords: ["agency development partner", "white label engineering", "team augmentation"],
+})
 
 const partnershipBenefits = [
   {
@@ -102,7 +110,8 @@ export default function ForAgenciesPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
                 We help agencies scale their technical capacity, deliver complex projects, and win bigger clients. 
-                White-label development that makes your agency look brilliant.
+                White-label development that makes your agency look brilliant, plus talent support and guidance
+                so your team keeps leveling up.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

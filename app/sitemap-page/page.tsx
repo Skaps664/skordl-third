@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/sitemap-page" },
   title: "Sitemap | Skord Labs - Pakistan's Top Software Development Company",
   description: "Browse all pages and services offered by Skord Labs, Pakistan's leading software development company.",
   keywords: ["sitemap", "site navigation", "Skord Labs pages"],
@@ -16,10 +17,10 @@ const sitemapSections = [
     title: "Products",
     links: [
       { href: "/products/castaipro", label: "CastAIPro" },
-      { href: "/products/youtube-to-shorts-ai", label: "YouTube to Shorts AI" },
+      { href: "/products/redbyone", label: "RedByOne" },
+      { href: "/products/configurax", label: "ConfiguraX" },
       { href: "/products/eazstart", label: "EazStart" },
       { href: "/products/flowboard", label: "FlowBoard" },
-      { href: "/products/newshub", label: "NewsHub" },
       { href: "/products/cureos", label: "cureOS" },
       { href: "/products/billingpro", label: "BillingPro" },
     ]

@@ -91,7 +91,8 @@ export default function CommunityPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Join our global community of developers, engineers, and technical innovators. 
-                Collaborate, learn, and build together.
+                Collaborate, learn, and build together while discovering real talent and growing through
+                mentorship, guidance, and shared execution.
               </p>
             </div>
           </div>

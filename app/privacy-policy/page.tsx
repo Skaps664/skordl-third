@@ -5,6 +5,7 @@ import { Shield, Lock, Eye, Database, Server } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy-policy" },
   title: "Privacy Policy | Skord Labs - Pakistan's Top Software Company",
   description: "Privacy policy for Skord Labs. Learn how we collect, use, and protect your data at Pakistan's leading software development company.",
   keywords: ["privacy policy", "data protection", "Skord Labs privacy", "Pakistan software company privacy"],
@@ -129,7 +130,7 @@ export default function PrivacyPolicyPage() {
                   <li>• Withdraw consent at any time</li>
                 </ul>
                 <p className="mt-6">
-                  To exercise these rights, please contact us at <a href="mailto:privacy@skordl.com" className="underline" style={{ color: "#203eec" }}>privacy@skordl.com</a>
+                  To exercise these rights, please contact us at <a href="mailto:support@skordlabs.com" className="underline" style={{ color: "#203eec" }}>support@skordlabs.com</a>
                 </p>
               </div>
             </div>
@@ -146,7 +147,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-2 text-muted-foreground">
                 <p><strong>Skord Labs</strong></p>
                 <p>Peshawar, Pakistan</p>
-                <p>Email: <a href="mailto:privacy@skordl.com" className="underline" style={{ color: "#203eec" }}>privacy@skordl.com</a></p>
+                <p>Email: <a href="mailto:support@skordlabs.com" className="underline" style={{ color: "#203eec" }}>support@skordlabs.com</a></p>
                 <p>Phone: <a href="tel:+923259327819" className="underline" style={{ color: "#203eec" }}>+92 325 9327819</a></p>
               </div>
             </div>

@@ -33,11 +33,11 @@ export function FinalCTA() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl bg-gradient-to-r from-[#203eec] to-[#00d4ff]" />
             </Link>
             <Link
-              href="mailto:hello@skordl.com"
+              href="mailto:hello@skordlabs.com"
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium rounded-full hover:bg-secondary transition-colors"
               style={{ borderColor: "#203eec", borderWidth: "1px", color: "#203eec" }}
             >
-              hello@skordl.com
+              hello@skordlabs.com
             </Link>
           </div>
         </div>

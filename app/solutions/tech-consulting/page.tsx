@@ -1,10 +1,18 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { ArrowRight, Lightbulb, TrendingUp, Shield, Target, CheckCircle2, ArrowUpRight, BookOpen, GitBranch, FileCode } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Technical Consulting Services | Skord Labs",
+  description:
+    "Technical strategy, architecture reviews, security audits, and performance optimization for product and engineering leaders.",
+  path: "/solutions/tech-consulting",
+  keywords: ["technical consulting", "architecture audit", "CTO advisory"],
+})
 
 const consultingServices = [
   {
@@ -132,7 +140,8 @@ export default function TechConsultingPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
                 Expert technical consulting to guide critical technology decisions, optimize your systems, 
-                and build a scalable technical foundation. From CTO advisory to architecture reviews.
+                and build a scalable technical foundation. From CTO advisory to architecture reviews,
+                we also support talent strategy and long-term team growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

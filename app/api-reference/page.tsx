@@ -69,7 +69,7 @@ const endpoints = [
 const codeExample = `// Authentication Example
 const apiKey = 'your_api_key_here';
 
-const response = await fetch('https://api.skordl.com/v1/projects', {
+const response = await fetch('https://api.skordlabs.com/v1/projects', {
   method: 'GET',
   headers: {
     'Authorization': \`Bearer \${apiKey}\`,
@@ -107,7 +107,8 @@ export default function APIReferencePage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Complete API documentation with endpoints, authentication methods, code examples, 
-                and integration guides for developers.
+                and integration guides for developers, plus practical guidance to help teams onboard talent
+                and ship safely at scale.
               </p>
             </div>
           </div>

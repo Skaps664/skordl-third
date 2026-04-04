@@ -5,6 +5,7 @@ import { FileText, Scale, AlertCircle, CheckCircle2 } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms-of-service" },
   title: "Terms of Service | Skord Labs - Leading Software Company in Pakistan",
   description: "Terms of service for Skord Labs. Review our terms and conditions for using our software development services and products.",
   keywords: ["terms of service", "terms and conditions", "Skord Labs terms", "software development terms"],
@@ -163,7 +164,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-2 text-muted-foreground">
               <p><strong>Skord Labs</strong></p>
               <p>Peshawar, Pakistan</p>
-              <p>Email: <a href="mailto:legal@skordl.com" className="underline" style={{ color: "#203eec" }}>legal@skordl.com</a></p>
+              <p>Email: <a href="mailto:support@skordlabs.com" className="underline" style={{ color: "#203eec" }}>support@skordlabs.com</a></p>
               <p>Phone: <a href="tel:+923259327819" className="underline" style={{ color: "#203eec" }}>+92 325 9327819</a></p>
             </div>
           </div>

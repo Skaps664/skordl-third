@@ -1,10 +1,18 @@
-"use client"
-
+import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
 import { ArrowRight, Code2, Boxes, Workflow, Database, CheckCircle2, ArrowUpRight, Cpu, Network, Cloud } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Custom Software Development Solutions | Skord Labs",
+  description:
+    "Custom software development for web, mobile, cloud, automation, and data systems tailored to your business requirements.",
+  path: "/solutions/custom-development",
+  keywords: ["custom software development", "full-stack development", "cloud-native solutions"],
+})
 
 const developmentCapabilities = [
   {
@@ -123,7 +131,8 @@ export default function CustomDevelopmentPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
                 When off-the-shelf solutions don't cut it, we build custom software tailored to your unique 
-                requirements. From complex enterprise systems to innovative consumer applications.
+                requirements. From complex enterprise systems to innovative consumer applications, we also
+                help teams grow with better talent, mentorship, and practical execution guidance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

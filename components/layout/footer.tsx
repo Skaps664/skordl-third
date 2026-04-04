@@ -13,10 +13,10 @@ const socialLinks = [
 
 const footerProducts = [
   { href: "/products/castaipro", label: "CastAIPro", tag: "Beta" },
-  { href: "/products/youtube-to-shorts-ai", label: "YouTube to Shorts AI", tag: "Beta" },
+  { href: "/products/redbyone", label: "RedByOne", tag: "Live" },
+  { href: "/products/configurax", label: "ConfiguraX", tag: "Live" },
   { href: "/products/eazstart", label: "EazStart", tag: "Live" },
   { href: "/products/flowboard", label: "FlowBoard", tag: "Live" },
-  { href: "/products/newshub", label: "NewsHub", tag: "Live" },
   { href: "/products/cureos", label: "cureOS", tag: "Beta" },
   { href: "/products/billingpro", label: "BillingPro", tag: "Live" },
 ]
@@ -34,8 +34,8 @@ const footerServices = [
 ]
 
 const footerCompany = [
-  { href: "#about", label: "About Skord Labs" },
-  { href: "#", label: "Our Process" },
+  { href: "/about", label: "About Skord Labs" },
+  { href: "/our-process", label: "Our Process" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/blog", label: "Blog" },
   { href: "/careers", label: "Careers" },
@@ -61,11 +61,11 @@ const footerSolutions = [
 ]
 
 const footerIndustries = [
-  { href: "#", label: "Fintech & Banking" },
-  { href: "#", label: "Healthcare" },
-  { href: "#", label: "E-commerce" },
-  { href: "#", label: "Real Estate" },
-  { href: "#", label: "Education" },
+  { href: "/industries/fintech-banking", label: "Fintech & Banking" },
+  { href: "/industries/healthcare", label: "Healthcare" },
+  { href: "/industries/ecommerce", label: "E-commerce" },
+  { href: "/industries/real-estate", label: "Real Estate" },
+  { href: "/industries/education", label: "Education" },
 ]
 
 const footerLegal = [
@@ -98,16 +98,19 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Building production-grade solutions and advancing technical knowledge. We transform ideas into scalable software that drives real business results.
             </p>
+            <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+              We also help teams find real technical talent, improve delivery confidence, and grow with practical guidance.
+            </p>
             
             {/* Contact Info */}
             <div className="space-y-2 mb-4">
               <div>
                 <Link
-                  href="mailto:hello@skordl.com"
+                  href="mailto:hello@skordlabs.com"
                   className="text-xs transition-colors hover:underline"
                   style={{ color: "#203eec" }}
                 >
-                  hello@skordl.com
+                  hello@skordlabs.com
                 </Link>
               </div>
               <div>

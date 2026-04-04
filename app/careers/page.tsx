@@ -67,7 +67,8 @@ export default function CareersPage() {
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                 Join our team of engineers, researchers, and innovators building production-grade 
-                software solutions that drive real business impact.
+                software solutions that drive real business impact. We also mentor people, guide career growth,
+                and help teams discover the right talent to scale faster.
               </p>
             </div>
           </div>
@@ -120,7 +121,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="mailto:careers@skordl.com?subject=General Application"
+                    href="mailto:careers@skordlabs.com?subject=General Application"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-medium text-white rounded-full transition-all hover:shadow-lg"
                     style={{ 
                       background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
