@@ -131,8 +131,7 @@ export default function CaseStudiesPage() {
             <motion.div
               variants={staggerContainer}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              animate="visible"
               className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
             >
               {otherStudies.map((study) => (
