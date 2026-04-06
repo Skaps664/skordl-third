@@ -11,6 +11,7 @@ export type CaseStudy = {
   client: string
   duration: string
   team: string[]
+  galleryImages?: string[]
   projectUrl?: string
 }
 
@@ -52,6 +53,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Eazstart",
     duration: "Product lifecycle",
     team: ["Product Team", "Full-stack Engineers", "UX Team"],
+    galleryImages: ["/case/eazstart-1.png"],
     projectUrl: "https://eazstart.vercel.app/landing",
   },
   {
@@ -154,6 +156,7 @@ export const caseStudies: CaseStudy[] = [
     client: "BuyShez",
     duration: "Ongoing",
     team: ["Solution Consultant", "Full-stack Engineers", "Delivery Team"],
+    galleryImages: ["/case/buyshe-2.png"],
     projectUrl: "https://www.buyshez.co.uk/",
   },
   {
@@ -185,6 +188,7 @@ export const caseStudies: CaseStudy[] = [
     client: "ZARU",
     duration: "Multi-phase delivery",
     team: ["Brand Designer", "Frontend Engineers", "Backend Engineers"],
+    galleryImages: ["/case/zaru-2.png"],
     projectUrl: "https://zaru-two.vercel.app/",
   },
   {
@@ -246,6 +250,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Solar Express",
     duration: "Long-term build",
     team: ["Solution Architects", "Full-stack Team", "Ops Engineering"],
+    galleryImages: ["/case/solarexpress-2.png", "/case/solarexpress-3.png"],
     projectUrl: "https://www.solarexpress.pk/",
   },
   {
@@ -306,6 +311,7 @@ export const caseStudies: CaseStudy[] = [
     client: "Dekord",
     duration: "Ongoing",
     team: ["Brand Team", "Creative Developers", "Operations Team"],
+    galleryImages: ["/case/dekord-2.png"],
     projectUrl: "https://www.dekord.online/",
   },
   {

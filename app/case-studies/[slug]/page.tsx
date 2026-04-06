@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     "@type": "Article",
     headline: study.title,
     description: study.description,
-    image: absoluteUrl(study.image),
+    image: [study.image, ...(study.galleryImages ?? [])].map((image) => absoluteUrl(image)),
     author: {
       "@type": "Organization",
       name: "Skord Labs",
@@ -166,6 +166,17 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
             </div>
 
+            <div className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">Delivery Highlights</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {study.tags.map((tag) => (
+                  <div key={tag} className="rounded-xl border border-border bg-card p-4">
+                    <p className="text-sm font-medium">{tag}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {study.projectUrl ? (
               <div className="mb-10">
                 <Link
@@ -191,8 +202,26 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
             </div>
 
+            {study.galleryImages?.length ? (
+              <div className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">Project Gallery</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {study.galleryImages.map((imagePath, index) => (
+                    <div key={imagePath} className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-secondary">
+                      <Image
+                        src={imagePath}
+                        alt={`${study.title} project image ${index + 2}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
             <div
-              className="prose prose-lg max-w-none"
+              className="max-w-none text-base md:text-lg text-muted-foreground leading-relaxed [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-semibold [&_h2]:text-foreground [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_li]:mb-2"
               dangerouslySetInnerHTML={{ __html: study.content }}
             />
 
