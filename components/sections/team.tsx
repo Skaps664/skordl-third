@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: "Sudais Khan",
     role: "CEO & Founder",
-    image: "/images/team-sudais-khan.jpg",
+    image: "/images/sud.png",
     linkedin: "https://www.linkedin.com/in/sudais-khan/",
   },
   {
