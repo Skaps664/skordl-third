@@ -13,19 +13,25 @@ const teamMembers = [
   },
   {
     name: "Aisha Iftikhar",
-    role: "Lead Python Dev",
+    role: "Team Lead",
     image: "/images/team-aisha-iftikhar.jpg",
     linkedin: "https://www.linkedin.com/in/aisha-iftikhar/",
   },
   {
     name: "Omer Jauhar",
-    role: "Backend Engineer",
+    role: "Team Lead",
     image: "/images/team-omer-jauhar.jpg",
     linkedin: "https://www.linkedin.com/in/omer-jauhar/",
   },
   {
+    name: "Bismillah",
+    role: "Team Lead",
+    image: "/bismil-pp.jpeg",
+    linkedin: "https://www.linkedin.com/in/omer-jauhar/",
+  },
+  {
     name: "Ammar Raza",
-    role: "Lead Software Dev",
+    role: "Team Lead",
     image: "/images/team-ammar-raza.jpg",
     linkedin: "https://www.linkedin.com/in/ammar-raza/",
   },
