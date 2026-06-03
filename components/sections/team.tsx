@@ -24,12 +24,6 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/omer-jauhar/",
   },
   {
-    name: "Bismillah",
-    role: "Team Lead",
-    image: "/bismil-pp.jpeg",
-    linkedin: "https://www.linkedin.com/in/omer-jauhar/",
-  },
-  {
     name: "Ammar Raza",
     role: "Team Lead",
     image: "/images/team-ammar-raza.jpg",
