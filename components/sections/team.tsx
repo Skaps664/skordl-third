@@ -7,32 +7,32 @@ import { Linkedin, Users } from "lucide-react"
 const teamMembers = [
   {
     name: "Sudais Khan",
-    role: "CEO & Founder",
-    image: "/images/sud.png",
+    role: "Founder & Backend Engr.",
+    image: "/images/new-pp.png",
     linkedin: "https://www.linkedin.com/in/sudais-khan/",
   },
   {
     name: "Aisha Iftikhar",
-    role: "Team Lead",
+    role: "Lead Python Dev.",
     image: "/images/team-aisha-iftikhar.jpg",
     linkedin: "https://www.linkedin.com/in/aisha-iftikhar/",
   },
   {
     name: "Omer Jauhar",
-    role: "Team Lead",
-    image: "/images/team-omer-jauhar.jpg",
+    role: "Lead ML Engr.",
+    image: "/images/om.jpeg",
     linkedin: "https://www.linkedin.com/in/omer-jauhar/",
   },
   {
     name: "Ammar Raza",
-    role: "Team Lead",
+    role: "Lead QA",
     image: "/images/team-ammar-raza.jpg",
     linkedin: "https://www.linkedin.com/in/ammar-raza/",
   },
   {
     name: "Mubeen Ali Shah",
-    role: "Lead QA",
-    image: "/images/team-mubeen-ali-shah.jpg",
+    role: "Lead Design Engr.",
+    image: "/images/mubeen-pp.png",
     linkedin: "https://www.linkedin.com/in/mubeen-ali-shah/",
   },
 ]
