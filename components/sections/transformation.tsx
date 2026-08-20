@@ -157,7 +157,7 @@ export function Transformation() {
         </div>
 
         {/* Bottom statement */}
-        <div className="mt-28 md:mt-36 max-w-4xl">
+        {/* <div className="mt-28 md:mt-36 max-w-4xl">
           <div className="p-12 md:p-16 lg:p-20 border-l-2 border-foreground/10">
             <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-foreground/90">
               Every technical decision is a product decision. 
@@ -165,7 +165,7 @@ export function Transformation() {
               Every system we build is engineered to evolve.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

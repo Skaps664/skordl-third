@@ -1,6 +1,6 @@
 "use client"
 
-const clients = ["folsx", "solarexpress", "dekord", "nic peshawar", "eazstart", "dermafy"]
+const clients = ["folsx", "solarexpress", "pivrfine", "nic peshawar", "findimoto", "dermafy", "hostyai", "dekord"]
 
 export function ClientLogos() {
   return (

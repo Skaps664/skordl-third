@@ -34,7 +34,7 @@ export function About() {
   }, [])
 
   return (
-    <section id="about" className="border-border border-t py-16 md:py-20 relative overflow-hidden">
+    <section id="about" className=" py-16 md:py-20 relative overflow-hidden">
       {/* Subtle animated background */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div 

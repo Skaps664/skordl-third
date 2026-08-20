@@ -28,7 +28,6 @@ const navGroups: NavGroup[] = [
       { label: "Recent Projects", href: "/case-studies" },
       { label: "Our Team", href: "/team" },
       { label: "Activities", href: "/activities" },
-      { label: "Community", href: "/community" },
       { label: "Careers", href: "/careers" },
     ],
   },
@@ -138,6 +137,7 @@ const navGroups: NavGroup[] = [
     number: "05",
     items: [
       { label: "Blog", href: "/blog" },
+      { label: "Community", href: "/community" },
       { label: "Documentation", href: "/documentation" },
       { label: "API Reference", href: "/api-reference" },
       { label: "Support", href: "/support" },

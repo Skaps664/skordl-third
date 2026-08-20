@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skord Labs — Company Profile</title>
+<style>
+/* ============================================================
+   SKORD LABS — COMPANY PROFILE DECK
+   Design system mirrored 1:1 from skordlabs.com
+   Slide format: 1280 x 720 (16:9) — print to PDF at 100%
+   ============================================================ */
+
+@font-face{
+  font-family:'Inter Tight';
+  src:url('assets/inter-tight.woff2') format('woff2');
+  font-weight:100 900;
+  font-style:normal;
+  font-display:block;
+}
+
+:root{
+  /* neutral scale — matches app/globals.css oklch tokens */
+  --paper:#ffffff;
+  --ink:#060606;
+  --muted:#5e5e5e;
+  --line:#e2e2e2;
+  --line-soft:#ededed;
+  --wash:#fafafa;
+  --wash-2:#f5f5f5;
+
+  /* brand */
+  --blue:#203eec;
+  --cyan:#00d4ff;
+  --violet:#8b5cf6;
+  --rose:#ff006e;
+
+  --grad-cta:linear-gradient(135deg,#203eec 0%,#00d4ff 100%);
+  --grad-head:linear-gradient(135deg,#ff006e 0%,#8b5cf6 33%,#203eec 66%,#00d4ff 100%);
+  --grad-num:linear-gradient(135deg,#203eec 0%,#8b5cf6 100%);
+  --grad-rule:linear-gradient(90deg,rgba(236,72,153,.85) 0%,rgba(139,92,246,.85) 25%,rgba(59,130,246,.85) 50%,rgba(6,182,212,.85) 75%,rgba(236,72,153,.85) 100%);
+
+  --glow:0 4px 20px rgba(32,62,236,.30);
+  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+body{
+  font-family:'Inter Tight','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:#eceded;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-feature-settings:"cv11","ss01";
+}
+
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.025em;line-height:1.05}
+
+/* ---------- slide shell ---------- */
+.deck{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:26px;
+  padding:44px 20px 80px;
+}
+
+.slide{
+  position:relative;
+  width:1280px;
+  height:720px;
+  flex:0 0 auto;
+  background:var(--paper);
+  overflow:hidden;
+  border-radius:6px;
+  box-shadow:0 18px 50px rgba(0,0,0,.14);
+  display:flex;
+  flex-direction:column;
+  padding:60px 72px 38px;
+}
+
+/* the signature 1px animated gradient rule from the site, held static */
+.slide::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:var(--grad-rule);
+  filter:blur(.4px);
+}
+
+.slide.wash{background:var(--wash)}
+.slide.dark{background:var(--ink);color:#fff}
+
+.body{flex:1;min-height:0;display:flex;flex-direction:column}
+
+/* ---------- footer ---------- */
+.foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:13px;
+  margin-top:auto;
+  border-top:1px solid var(--line-soft);
+  font-size:10.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#a0a0a0;
+  font-family:var(--mono);
+}
+.slide.dark .foot{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.42)}
+.foot .pg{font-weight:600;color:var(--muted)}
+.slide.dark .foot .pg{color:rgba(255,255,255,.7)}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.slide.dark .eyebrow{color:rgba(255,255,255,.55)}
+
+h2.title{font-size:44px;line-height:1.08;margin-bottom:16px}
+h2.title.sm{font-size:38px}
+
+.grad{
+  background:var(--grad-head);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+
+.lead{
+  font-size:16px;
+  line-height:1.62;
+  color:var(--muted);
+  max-width:820px;
+}
+.lead.wide{max-width:1000px}
+.slide.dark .lead{color:rgba(255,255,255,.66)}
+
+.head{margin-bottom:28px}
+
+/* ---------- cards ---------- */
+.card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.55);
+  padding:24px 26px;
+}
+.slide.wash .card{background:#fff}
+.card h3{font-size:19px;margin-bottom:9px;letter-spacing:-.02em}
+.card p{font-size:13.5px;line-height:1.6;color:var(--muted)}
+
+.grid{display:grid;gap:16px}
+/* cards inside a height-filling grid stretch and push their footer content down */
+.grid[style*="grid-auto-rows"] > .card{display:flex;flex-direction:column}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+
+.pill{
+  display:inline-block;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 15px;
+  font-size:12.5px;
+  font-weight:500;
+}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+
+.badge{
+  display:inline-block;
+  align-self:flex-start;
+  border-radius:999px;
+  padding:3px 10px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+.badge.live{background:rgba(34,197,94,.12);color:#15803d}
+.badge.beta{background:rgba(234,179,8,.14);color:#a16207}
+
+.num{
+  font-family:var(--mono);
+  font-size:40px;
+  font-weight:700;
+  line-height:1;
+  background:var(--grad-num);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  opacity:.32;
+}
+
+.dot{
+  width:6px;height:6px;border-radius:999px;
+  background:var(--blue);flex:0 0 auto;margin-top:7px;
+}
+
+.cta{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--grad-cta);
+  color:#fff;font-weight:500;font-size:15px;
+  padding:14px 30px;border-radius:999px;
+  box-shadow:var(--glow);
+}
+.cta.ghost{
+  background:none;color:var(--blue);
+  border:1px solid var(--blue);box-shadow:none;
+}
+
+/* decorative blurred orbs, as on the live site */
+.orb{
+  position:absolute;border-radius:999px;pointer-events:none;
+  filter:blur(80px);
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- ══════════════════ 01 · COVER ══════════════════ -->
+<section class="slide" style="padding:0">
+  <img src="assets/orb.png" alt=""
+       style="position:absolute;right:-190px;top:-70px;width:820px;opacity:.9;pointer-events:none">
+  <div class="orb" style="left:-160px;bottom:-200px;width:560px;height:560px;background:rgba(32,62,236,.10)"></div>
+
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;padding:60px 72px 44px">
+
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <img src="assets/logo-black.png" alt="Skord Labs" style="height:34px;width:auto">
+      <span class="eyebrow" style="margin:0">Company Profile · 2026</span>
+    </div>
+
+    <div style="margin-top:auto;margin-bottom:auto;max-width:960px">
+      <p class="eyebrow">Skord Labs — Founded 2024</p>
+      <h1 style="font-size:74px;line-height:1.04;letter-spacing:-.035em">
+        Big ideas, turned into<br>
+        <span class="grad" style="display:inline-block;margin-top:10px">software that works</span>
+      </h1>
+      <p class="lead" style="font-size:19px;margin-top:26px;max-width:760px">
+        We are a software research and development lab. We help companies design, build
+        and grow real products — from the very first idea all the way to millions of users.
+      </p>
+    </div>
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;
+                border-top:1px solid var(--line);padding-top:20px">
+      <div style="display:flex;gap:36px;font-size:13.5px;color:var(--muted)">
+        <span><strong style="color:var(--ink);font-weight:600">skordlabs.com</strong></span>
+        <span>hello@skordlabs.com</span>
+        <span>+92 325 9327819</span>
+      </div>
+      <span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+                   text-transform:uppercase;color:#a0a0a0">
+        Pakistan · Working worldwide
+      </span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════ 02 · CONTENTS ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">Contents</p>
+      <h2 class="title">What's inside</h2>
+      <p class="lead">A short tour of who we are, what we build, and how we work with you.</p>
+    </div>
+
+    <div class="grid g2" style="gap:0 60px;margin-top:8px">
+      <div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">01</span>Who we are</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">03</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">02</span>What makes us different</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">04</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">03</span>Results so far</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">05</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">04</span>What we do</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">06</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">05</span>AI, explained simply</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">08</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">06</span>Who we work with</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">09</span>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">07</span>Industries we know</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">10</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">08</span>Products we built ourselves</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">11</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">09</span>Selected work</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">12</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">10</span>How we work with you</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">14</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">11</span>The people behind it</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">16</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)">
+          <span style="font-size:15px"><span style="font-family:var(--mono);color:var(--blue);font-size:12px;margin-right:14px">12</span>Let's talk</span>
+          <span style="font-family:var(--mono);font-size:13px;color:var(--muted)">19</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Skord Labs — Company Profile</span><span class="pg">02</span></div>
+</section>
+
+
+<!-- ══════════════════ 03 · WHO WE ARE ══════════════════ -->
+<section class="slide">
+  <div class="orb" style="right:-140px;top:40px;width:460px;height:460px;background:rgba(139,92,246,.10)"></div>
+  <div class="body" style="position:relative">
+    <p class="eyebrow">01 — Who we are</p>
+
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start">
+      <div>
+        <h2 class="title">A lab,<br><span class="grad" style="display:inline-block;margin-top:8px">not just an agency</span></h2>
+        <p class="lead" style="margin-top:22px">
+          Most software companies build exactly what you ask for and then move on.
+          We start by asking <em>why</em>. We study the problem, test the idea on real
+          people, and only then start building.
+        </p>
+        <p class="lead" style="margin-top:16px">
+          The result is software that solves the real problem — not just the first
+          version of it you described. It also means fewer expensive surprises later.
+        </p>
+        <p class="lead" style="margin-top:16px">
+          We started in 2024 in Pakistan. Since then we have delivered projects for
+          startups, growing brands and established businesses across the UK, Pakistan
+          and beyond — and built seven products of our own along the way.
+        </p>
+      </div>
+
+      <div class="grid g2" style="gap:14px">
+        <div class="card" style="padding:24px;min-height:168px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:34px;font-weight:700;letter-spacing:-.03em;background:var(--grad-num);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">2024</div>
+          <p style="margin-top:6px;font-size:13px;color:var(--muted)">Founded</p>
+        </div>
+        <div class="card" style="padding:24px;min-height:168px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:34px;font-weight:700;letter-spacing:-.03em;background:var(--grad-num);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">15+</div>
+          <p style="margin-top:6px;font-size:13px;color:var(--muted)">Engineers, designers &amp; researchers</p>
+        </div>
+        <div class="card" style="padding:24px;min-height:168px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:34px;font-weight:700;letter-spacing:-.03em;background:var(--grad-num);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">11+</div>
+          <p style="margin-top:6px;font-size:13px;color:var(--muted)">Client projects delivered</p>
+        </div>
+        <div class="card" style="padding:24px;min-height:168px;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:34px;font-weight:700;letter-spacing:-.03em;background:var(--grad-num);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">7</div>
+          <p style="margin-top:6px;font-size:13px;color:var(--muted)">Products we own and run</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:34px">
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px">What we're good at</p>
+      <div class="pills">
+        <span class="pill">Web &amp; Mobile Apps</span>
+        <span class="pill">Artificial Intelligence</span>
+        <span class="pill">Machine Learning</span>
+        <span class="pill">Online Stores</span>
+        <span class="pill">Internal Business Tools</span>
+        <span class="pill">Cloud &amp; Infrastructure</span>
+        <span class="pill">Design Systems</span>
+        <span class="pill">Applied Research</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Who we are</span><span class="pg">03</span></div>
+</section>
+
+
+<!-- ══════════════════ 04 · WHAT MAKES US DIFFERENT ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">02 — What makes us different</p>
+      <h2 class="title">Four things we do that<br><span class="grad" style="display:inline-block;margin-top:8px">most teams skip</span></h2>
+    </div>
+
+    <div class="grid g2" style="gap:16px">
+      <div class="card" style="display:flex;gap:22px;align-items:flex-start">
+        <span class="num">01</span>
+        <div>
+          <h3>Built around real people</h3>
+          <p>We design around how people actually behave, not how we wish they would.
+             Fewer clicks, less confusion, and more people finishing what they came to do.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:22px;align-items:flex-start">
+        <span class="num">02</span>
+        <div>
+          <h3>Ready to grow</h3>
+          <p>We build for the size you're heading toward, not just the size you are today.
+             When your business grows, your software grows with it — no costly rebuild.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:22px;align-items:flex-start">
+        <span class="num">03</span>
+        <div>
+          <h3>Fast on purpose</h3>
+          <p>Slow software loses customers. We measure and tune every page, image and
+             database query so that everything feels instant to the person using it.</p>
+        </div>
+      </div>
+      <div class="card" style="display:flex;gap:22px;align-items:flex-start">
+        <span class="num">04</span>
+        <div>
+          <h3>Backed by research</h3>
+          <p>Before we write a single line of code we study the problem, test the idea
+             and check the numbers. Guessing is the most expensive thing you can do.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;border-left:2px solid rgba(6,6,6,.12);padding:6px 0 6px 30px">
+      <p style="font-size:21px;font-weight:500;line-height:1.5;color:rgba(6,6,6,.88);max-width:900px">
+        Every technical decision is a business decision. Every business decision is backed
+        by evidence. Every system we build is made to keep evolving.
+      </p>
+    </div>
+  </div>
+  <div class="foot"><span>What makes us different</span><span class="pg">04</span></div>
+</section>
+
+
+<!-- ══════════════════ 05 · RESULTS ══════════════════ -->
+<section class="slide dark">
+  <div class="orb" style="right:-120px;top:-80px;width:520px;height:520px;background:rgba(32,62,236,.34)"></div>
+  <div class="orb" style="left:-140px;bottom:-160px;width:420px;height:420px;background:rgba(255,0,110,.16)"></div>
+
+  <div class="body" style="position:relative">
+    <div class="head">
+      <p class="eyebrow">03 — Results so far</p>
+      <h2 class="title" style="color:#fff">What our work<br><span class="grad" style="display:inline-block;margin-top:8px">has added up to</span></h2>
+    </div>
+
+    <div class="grid g4" style="gap:0;margin-top:22px">
+      <div style="padding:0 30px 0 0;border-right:1px solid rgba(255,255,255,.14)">
+        <div style="font-size:56px;font-weight:700;letter-spacing:-.04em;line-height:1;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$2.4M</div>
+        <div style="font-size:16px;font-weight:600;margin-top:12px">Capital raised</div>
+        <p style="font-size:13px;line-height:1.55;color:rgba(255,255,255,.55);margin-top:5px">Funding our clients secured after launching what we built for them.</p>
+      </div>
+      <div style="padding:0 30px;border-right:1px solid rgba(255,255,255,.14)">
+        <div style="font-size:56px;font-weight:700;letter-spacing:-.04em;line-height:1;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">1.2M+</div>
+        <div style="font-size:16px;font-weight:600;margin-top:12px">People served</div>
+        <p style="font-size:13px;line-height:1.55;color:rgba(255,255,255,.55);margin-top:5px">Real users on the platforms we have designed and shipped.</p>
+      </div>
+      <div style="padding:0 30px;border-right:1px solid rgba(255,255,255,.14)">
+        <div style="font-size:56px;font-weight:700;letter-spacing:-.04em;line-height:1;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">99.9%</div>
+        <div style="font-size:16px;font-weight:600;margin-top:12px">Uptime</div>
+        <p style="font-size:13px;line-height:1.55;color:rgba(255,255,255,.55);margin-top:5px">Average availability of the live systems we run. It stays on.</p>
+      </div>
+      <div style="padding:0 0 0 30px">
+        <div style="font-size:56px;font-weight:700;letter-spacing:-.04em;line-height:1;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">40%</div>
+        <div style="font-size:16px;font-weight:600;margin-top:12px">Faster</div>
+        <p style="font-size:13px;line-height:1.55;color:rgba(255,255,255,.55);margin-top:5px">Typical speed improvement when we take over an existing system.</p>
+      </div>
+    </div>
+
+    <div class="grid g3" style="gap:16px;margin-top:44px">
+      <div style="border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 24px">
+        <h3 style="font-size:17px;color:#fff">Money in the bank</h3>
+        <p style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.6);margin-top:8px">Investors backed our clients because the product was ready, working and credible.</p>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 24px">
+        <h3 style="font-size:17px;color:#fff">Systems that hold</h3>
+        <p style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.6);margin-top:8px">Traffic spikes, busy seasons and growth do not take our clients' platforms down.</p>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 24px">
+        <h3 style="font-size:17px;color:#fff">Teams that improve</h3>
+        <p style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.6);margin-top:8px">We leave clients with better habits, better hires and clearer ways of working.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Results so far</span><span class="pg">05</span></div>
+</section>
+
+
+<!-- ══════════════════ 06 · WHAT WE DO (1/2) ══════════════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">04 — What we do</p>
+      <h2 class="title">Six ways we help,<br><span class="grad" style="display:inline-block;margin-top:8px">in plain English</span></h2>
+      <p class="lead">You do not need to know the technical words. Here is what each one actually means for your business.</p>
+    </div>
+
+    <div class="grid g3" style="gap:16px;margin-bottom:auto">
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">01</span>
+        <h3 style="margin-top:14px">Brand building &amp; launch</h3>
+        <p>Your name, your look, your message, and a proper plan for launch day.
+           Everything people see, remember and repeat about your business.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Naming, logo &amp; visual identity</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Positioning &amp; messaging</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Rebrand without losing customers</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">02</span>
+        <h3 style="margin-top:14px">AI solutions</h3>
+        <p>Assistants and automations that take repetitive work off your team's plate
+           and answer your customers straight away, day or night.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Support &amp; sales chatbots</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Automating routine admin</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">AI trained on your own data</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">03</span>
+        <h3 style="margin-top:14px">Build your first version</h3>
+        <p>Got an idea? We build a working first version quickly, put it in front of real
+           users, and help you learn what to do next — before you spend big.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Fast, testable prototypes</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Real user testing</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Built right from day one</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>What we do</span><span class="pg">06</span></div>
+</section>
+
+
+<!-- ══════════════════ 07 · WHAT WE DO (2/2) ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">04 — What we do (continued)</p>
+      <h2 class="title sm">And once you are up and running</h2>
+    </div>
+
+    <div class="grid g3" style="gap:16px">
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">04</span>
+        <h3 style="margin-top:14px">Custom development</h3>
+        <p>Websites, web apps and mobile apps built around how your business actually
+           runs — instead of squeezing your business into someone else's template.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Web applications</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">iPhone &amp; Android apps</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Live, real-time features</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">05</span>
+        <h3 style="margin-top:14px">Online stores</h3>
+        <p>Shops that load fast, take payments safely, keep stock accurate, and show you
+           clearly what is selling and what is not.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Secure payment setup</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Stock &amp; order management</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Sales tracking you understand</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge" style="background:rgba(32,62,236,.08);color:var(--blue)">06</span>
+        <h3 style="margin-top:14px">Systems for your team</h3>
+        <p>Dashboards, admin panels and internal tools that replace the tangle of
+           spreadsheets and WhatsApp messages your team is currently drowning in.</p>
+        <div style="padding-top:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Custom dashboards</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Customer &amp; order records</span></div>
+          <div style="display:flex;gap:10px"><span class="dot"></span><span style="font-size:12.5px;color:var(--muted)">Connecting the tools you use</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:auto;padding:20px 26px;border:1px solid var(--line);border-radius:16px;background:#fff;
+                display:flex;align-items:center;justify-content:space-between;gap:30px">
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.55">
+        <strong style="color:var(--ink);font-weight:600">Not sure which one you need?</strong>
+        That is normal. Most people start with a conversation, and we work it out together — no charge, no obligation.
+      </p>
+      <span style="font-family:var(--mono);font-size:12px;color:var(--blue);white-space:nowrap">hello@skordlabs.com</span>
+    </div>
+  </div>
+  <div class="foot"><span>What we do</span><span class="pg">07</span></div>
+</section>
+
+
+<!-- ══════════════════ 08 · AI ══════════════════ -->
+<section class="slide">
+  <div class="orb" style="right:-130px;top:-40px;width:480px;height:480px;background:rgba(139,92,246,.13)"></div>
+  <div class="body" style="position:relative">
+    <div class="head">
+      <p class="eyebrow">05 — AI, explained simply</p>
+      <h2 class="title">AI that does<br><span class="grad" style="display:inline-block;margin-top:8px">real, useful work</span></h2>
+      <p class="lead wide">No buzzwords. AI is only worth building when it saves your team hours or wins you customers.</p>
+    </div>
+
+    <div class="grid g3" style="gap:13px">
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">Assistants &amp; chatbots</h3>
+        <p style="margin-top:7px">Answer customer questions instantly, at 2am, without hiring a night shift.</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">Automating busywork</h3>
+        <p style="margin-top:7px">Onboarding, approvals, reports and follow-ups that run themselves.</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">AI trained on your data</h3>
+        <p style="margin-top:7px">A model that knows your products, your policies and your customers.</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">Smarter decisions</h3>
+        <p style="margin-top:7px">Forecasts and dashboards that turn your numbers into a clear next step.</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">Social media engines</h3>
+        <p style="margin-top:7px">Content created, scheduled and improved automatically, week after week.</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <h3 style="font-size:16.5px">Seeing &amp; predicting</h3>
+        <p style="margin-top:7px">Image recognition for quality checks, monitoring and early warnings.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+                border:1px solid var(--line);border-radius:16px;padding:20px 0;background:var(--wash)">
+      <div style="text-align:center;border-right:1px solid var(--line)">
+        <div style="font-size:30px;font-weight:700;letter-spacing:-.03em;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">90%</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">of routine work automated</p>
+      </div>
+      <div style="text-align:center;border-right:1px solid var(--line)">
+        <div style="font-size:30px;font-weight:700;letter-spacing:-.03em;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">10×</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">faster processing</p>
+      </div>
+      <div style="text-align:center;border-right:1px solid var(--line)">
+        <div style="font-size:30px;font-weight:700;letter-spacing:-.03em;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">95%+</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">accuracy achieved</p>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:30px;font-weight:700;letter-spacing:-.03em;background:var(--grad-cta);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">$200K</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">saved per year</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AI, explained simply</span><span class="pg">08</span></div>
+</section>
+
+
+<!-- ══════════════════ 09 · WHO WE WORK WITH ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head" style="margin-bottom:22px">
+      <p class="eyebrow">06 — Who we work with</p>
+      <h2 class="title">Different clients,<br><span class="grad" style="display:inline-block;margin-top:8px">different starting points</span></h2>
+    </div>
+
+    <div class="grid g2" style="gap:16px">
+      <div class="card" style="padding:22px 26px">
+        <h3 style="font-size:21px">Startups &amp; founders</h3>
+        <p style="margin-top:10px">You have the idea and the drive, but not the engineering team yet. We become
+           that team — building your first real version, getting it in front of users, and helping you
+           put together something investors take seriously.</p>
+        <div class="pills" style="margin-top:14px">
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">First version</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Investor-ready</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Move fast</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px 26px">
+        <h3 style="font-size:21px">Agencies</h3>
+        <p style="margin-top:10px">You have won the work but not the capacity to deliver it. We work quietly behind
+           your brand as your engineering partner — your client never has to know, and the quality stays
+           on your name.</p>
+        <div class="pills" style="margin-top:14px">
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">White-label</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Extra capacity</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">On deadline</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px 26px">
+        <h3 style="font-size:21px">Established businesses</h3>
+        <p style="margin-top:10px">Your systems work, but they are old, slow or held together by hand. We modernise
+           them carefully — without stopping your operations or losing years of data.</p>
+        <div class="pills" style="margin-top:14px">
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Modernisation</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Security</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Zero downtime</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px 26px">
+        <h3 style="font-size:21px">Teams who need advice</h3>
+        <p style="margin-top:10px">Sometimes you do not need us to build anything. You need an honest second opinion
+           on a plan, a budget, a hire or a vendor. We do that too, as straight talk rather than a sales pitch.</p>
+        <div class="pills" style="margin-top:14px">
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Technical advice</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Hiring help</span>
+          <span class="pill" style="font-size:11.5px;padding:5px 12px">Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Who we work with</span><span class="pg">09</span></div>
+</section>
+
+
+<!-- ══════════════════ 10 · INDUSTRIES ══════════════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">07 — Industries we know</p>
+      <h2 class="title sm">We have already learned the rules<br>in these five worlds</h2>
+      <p class="lead">Every industry has its own regulations, habits and traps. Working with a team that has been there before saves you months.</p>
+    </div>
+
+    <div class="grid g5" style="gap:14px">
+      <div class="card" style="padding:24px 20px">
+        <h3 style="font-size:16px">Finance &amp; banking</h3>
+        <p style="margin-top:8px">Payments, lending and wallets built to the security and compliance standards regulators expect.</p>
+      </div>
+      <div class="card" style="padding:24px 20px">
+        <h3 style="font-size:16px">Healthcare</h3>
+        <p style="margin-top:8px">Patient records, bookings and clinical tools that keep private data genuinely private.</p>
+      </div>
+      <div class="card" style="padding:24px 20px">
+        <h3 style="font-size:16px">Retail &amp; e-commerce</h3>
+        <p style="margin-top:8px">Storefronts, stock, delivery and returns — the full journey from browse to doorstep.</p>
+      </div>
+      <div class="card" style="padding:24px 20px">
+        <h3 style="font-size:16px">Property</h3>
+        <p style="margin-top:8px">Listings, viewings, tenant management and the paperwork that comes with all of it.</p>
+      </div>
+      <div class="card" style="padding:24px 20px">
+        <h3 style="font-size:16px">Education</h3>
+        <p style="margin-top:8px">Courses, student progress and assessment tools that teachers and learners both like using.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:auto;padding-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <div style="border-left:2px solid var(--blue);padding-left:18px">
+        <h3 style="font-size:16px">We learn your rules first</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">Before building, we understand the regulations and standards your sector runs on.</p>
+      </div>
+      <div style="border-left:2px solid var(--violet);padding-left:18px">
+        <h3 style="font-size:16px">Security is not an add-on</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">Data protection is designed in from the start, not bolted on before launch.</p>
+      </div>
+      <div style="border-left:2px solid var(--cyan);padding-left:18px">
+        <h3 style="font-size:16px">You own everything</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">The code, the data and the accounts are yours. No lock-in, no hostages.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Industries we know</span><span class="pg">10</span></div>
+</section>
+
+
+<!-- ══════════════════ 11 · OUR PRODUCTS ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head" style="margin-bottom:22px">
+      <p class="eyebrow">08 — Products we built ourselves</p>
+      <h2 class="title sm">Built by us,<br><span class="grad" style="display:inline-block;margin-top:6px">ready for you</span></h2>
+      <p class="lead wide">Seven products of our own, live and in use — proof that we run what we recommend.</p>
+    </div>
+
+    <div class="grid g4" style="gap:14px">
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/work-crypto.jpg" alt="" style="width:100%;height:88px;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="font-size:16px">CastAIPro</h3><span class="badge beta">Beta</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Turn your videos into any character, with a matching voice — create without showing your face.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/bg-2.jpg" alt="" style="width:100%;height:88px;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="font-size:16px">RedByOne</h3><span class="badge live">Live</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Connects blood donors with people in emergency need, in real time, with hospitals in the loop.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/bg-3.jpg" alt="" style="width:100%;height:88px;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="font-size:16px">ConfiguraX</h3><span class="badge live">Live</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Lets businesses build and manage product options visually, at enterprise scale.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/work-onboarding.jpg" alt="" style="width:100%;height:88px;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <h3 style="font-size:16px">EazStart</h3><span class="badge live">Live</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">A complete operating system for new startups — plan, track and report in one place.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="gap:14px;margin-top:14px">
+      <div class="card" style="padding:0;overflow:hidden;background:#fff;display:flex;align-items:stretch">
+        <img src="assets/work-tasks.jpg" alt="" style="width:104px;height:100%;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <h3 style="font-size:16px">FlowBoard</h3><span class="badge live">Live</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Team task boards for organising projects and working together in real time.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff;display:flex;align-items:stretch">
+        <img src="assets/bg-1.jpg" alt="" style="width:104px;height:100%;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <h3 style="font-size:16px">cureOS</h3><span class="badge beta">Beta</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Clean, private replacements for the Gallery, Dialer and Contacts apps on Android.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff;display:flex;align-items:stretch">
+        <img src="assets/work-fashion.jpg" alt="" style="width:104px;height:100%;object-fit:cover;display:block">
+        <div style="padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <h3 style="font-size:16px">BillingPro</h3><span class="badge live">Live</span>
+          </div>
+          <p style="margin-top:7px;font-size:12.5px">Professional invoices and GST compliance, made simple for Pakistani businesses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Products we built ourselves</span><span class="pg">11</span></div>
+</section>
+
+
+<!-- ══════════════════ 12 · SELECTED WORK I ══════════════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">09 — Selected work</p>
+      <h2 class="title sm">Real projects,<br><span class="grad" style="display:inline-block;margin-top:6px">real businesses</span></h2>
+    </div>
+
+    <div class="grid g3" style="gap:18px">
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/eazstart-2.jpg" alt="Eazstart" style="width:100%;height:186px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line-soft)">
+        <div style="padding:20px 22px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)">SaaS Product</p>
+          <h3 style="font-size:18px;margin-top:9px">Eazstart</h3>
+          <p style="margin-top:8px">A single platform where startup founders plan the business, track their numbers and produce reports for investors — replacing five separate tools.</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/solarexpress-1.jpg" alt="Solar Express" style="width:100%;height:186px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line-soft)">
+        <div style="padding:20px 22px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)">Commerce &amp; Operations</p>
+          <h3 style="font-size:18px;margin-top:9px">Solar Express</h3>
+          <p style="margin-top:8px">A full online store plus the systems behind it — stock, orders and staff tools — for one of Pakistan's solar energy suppliers.</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/zaru-1.jpg" alt="ZARU" style="width:100%;height:186px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line-soft)">
+        <div style="padding:20px 22px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)">Brand &amp; Commerce</p>
+          <h3 style="font-size:18px;margin-top:9px">ZARU</h3>
+          <p style="margin-top:8px">Brand identity and a fragrance store built together, so the way it looks and the way it sells were designed as one thing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Selected work</span><span class="pg">12</span></div>
+</section>
+
+
+<!-- ══════════════════ 13 · SELECTED WORK II ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">09 — Selected work (continued)</p>
+      <h2 class="title sm">Eight more we are proud of</h2>
+    </div>
+
+    <div class="grid g4" style="gap:14px">
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/finwise.jpg" alt="Finwise" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Finwise</h3>
+          <p style="margin-top:6px;font-size:12px">A personal finance app that helps people see, plan and control their money.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/paddle.jpg" alt="Paddle Billing" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Paddle Billing</h3>
+          <p style="margin-top:6px;font-size:12px">A pricing and checkout experience built to turn visitors into paying subscribers.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/buyshez.jpg" alt="BuyShez" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">BuyShez</h3>
+          <p style="margin-top:6px;font-size:12px">A UK retailer moved online properly, with advice on how to run it day to day.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/ontech.jpg" alt="ONTECH//PK" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">ONTECH//PK</h3>
+          <p style="margin-top:6px;font-size:12px">A technology news platform built for fast publishing and heavy reader traffic.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4" style="gap:14px;margin-top:14px">
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/dekord-1.jpg" alt="Dekord" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Dekord</h3>
+          <p style="margin-top:6px;font-size:12px">Brand and online store built from scratch for a home décor business.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/inventory-manufactoring.jpg" alt="Dekord Operations" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Dekord Operations</h3>
+          <p style="margin-top:6px;font-size:12px">Factory and stock software that tracks production from raw material to finished order.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/Haarshe.jpg" alt="Haarshe" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Haarshe</h3>
+          <p style="margin-top:6px;font-size:12px">A store connected to social selling, so one team runs both without double work.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0;overflow:hidden;background:#fff">
+        <img src="assets/universal-ecom-admin.jpg" alt="Universal Admin" style="width:100%;height:104px;object-fit:cover;object-position:top;display:block">
+        <div style="padding:14px 16px">
+          <h3 style="font-size:15px">Universal Admin</h3>
+          <p style="margin-top:6px;font-size:12px">One control panel that manages several online stores from a single screen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Selected work</span><span class="pg">13</span></div>
+</section>
+
+
+<!-- ══════════════════ 14 · HOW WE WORK ══════════════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="head" style="margin-bottom:20px">
+      <p class="eyebrow">10 — How we work with you</p>
+      <h2 class="title" style="font-size:34px">Five steps, and you always know which one we are on</h2>
+      <p class="lead wide">No mystery, no disappearing for three months. You see progress every week and can change direction any time.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:14px 26px;background:rgba(255,255,255,.6)">
+        <span class="num" style="font-size:29px">01</span>
+        <div style="flex:1">
+          <h3 style="font-size:17px">Understand the problem</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px">We sit with you and map what the business needs, what your customers do today, and what success will actually look like in numbers.</p>
+        </div>
+        <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap">1–2 weeks</span>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:14px 26px;background:rgba(255,255,255,.6)">
+        <span class="num" style="font-size:29px">02</span>
+        <div style="flex:1">
+          <h3 style="font-size:17px">Plan and design it</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px">You get a clear plan: what gets built, in what order, by when, and for how much. Nothing starts until you are happy with it.</p>
+        </div>
+        <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap">1–2 weeks</span>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:14px 26px;background:rgba(255,255,255,.6)">
+        <span class="num" style="font-size:29px">03</span>
+        <div style="flex:1">
+          <h3 style="font-size:17px">Build and check</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px">We build in short cycles and show you working software regularly. Everything is tested before it reaches your customers.</p>
+        </div>
+        <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap">4–12 weeks</span>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:14px 26px;background:rgba(255,255,255,.6)">
+        <span class="num" style="font-size:29px">04</span>
+        <div style="flex:1">
+          <h3 style="font-size:17px">Set your team up</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px">We train your people, write things down properly, and help you hire well — so you are never dependent on us to keep going.</p>
+        </div>
+        <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap">Alongside</span>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:14px 26px;background:rgba(255,255,255,.6)">
+        <span class="num" style="font-size:29px">05</span>
+        <div style="flex:1">
+          <h3 style="font-size:17px">Launch, then keep improving</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.55;margin-top:5px">Going live is the start, not the finish. We watch how it performs, fix what needs fixing, and keep making it better.</p>
+        </div>
+        <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap">Ongoing</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>How we work with you</span><span class="pg">14</span></div>
+</section>
+
+
+<!-- ══════════════════ 15 · BEYOND BUILDING ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">10 — Beyond the build</p>
+      <h2 class="title">We also help you<br><span class="grad" style="display:inline-block;margin-top:8px">build the team</span></h2>
+      <p class="lead wide">Good software with the wrong team falls apart within a year. So we help with the people side too — finding the right engineers, training the ones you have, and setting up a way of working that holds up when we are gone.</p>
+    </div>
+
+    <div class="grid g4" style="gap:16px;flex:1;grid-auto-rows:1fr">
+      <div class="card">
+        <h3 style="font-size:17px">Finding real talent</h3>
+        <p style="margin-top:8px">We help you write the job spec, screen candidates properly, and tell the difference between someone who talks well and someone who can build.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:17px">Training your team</h3>
+        <p style="margin-top:8px">Mentoring, code reviews and hands-on guidance that lifts the engineers you already have instead of replacing them.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:17px">A way of working</h3>
+        <p style="margin-top:8px">Simple, repeatable routines for planning, shipping and reviewing — so delivery stops depending on one heroic person.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:17px">Honest advice</h3>
+        <p style="margin-top:8px">A second opinion on your roadmap, your budget or a vendor's quote — told straight, even when it is not what you hoped to hear.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;border:1px solid var(--line);border-radius:24px;background:#fff;padding:22px 32px;
+                display:flex;align-items:center;justify-content:space-between;gap:36px">
+      <div>
+        <h3 style="font-size:20px">Beyond shipping products</h3>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-top:8px;max-width:740px">
+          We support hiring strategy, team mentorship, delivery frameworks and leadership coaching —
+          so your people and your platform can grow at the same pace.
+        </p>
+      </div>
+      <span class="cta" style="font-size:14px;padding:12px 26px;white-space:nowrap">Talk to our team →</span>
+    </div>
+  </div>
+  <div class="foot"><span>Beyond the build</span><span class="pg">15</span></div>
+</section>
+
+
+<!-- ══════════════════ 16 · TEAM ══════════════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">11 — The people behind it</p>
+      <h2 class="title sm">Meet the team</h2>
+      <p class="lead">Engineers, designers and researchers with deep experience across software, machine learning and applied research.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:18px">
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--wash-2)">
+          <img src="assets/new-pp.jpg" alt="Sudais Khan" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)">
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">Sudais Khan</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Founder &amp; Backend Engineer</p>
+      </div>
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--wash-2)">
+          <img src="assets/team-aisha-iftikhar.jpg" alt="Aisha Iftikhar" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)">
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">Aisha Iftikhar</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Lead Python Developer</p>
+      </div>
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--wash-2)">
+          <img src="assets/om.jpg" alt="Omer Jauhar" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)">
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">Omer Jauhar</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Lead ML Engineer</p>
+      </div>
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--wash-2)">
+          <img src="assets/team-ammar-raza.jpg" alt="Ammar Raza" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)">
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">Ammar Raza</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Lead Quality Assurance</p>
+      </div>
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--wash-2)">
+          <img src="assets/mubeen-pp.jpg" alt="Mubeen Ali Shah" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)">
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">Mubeen Ali Shah</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Lead Design Engineer</p>
+      </div>
+      <div style="text-align:center">
+        <div style="aspect-ratio:1;border-radius:14px;border:1px dashed var(--line);background:var(--wash);
+                    display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <span style="font-size:30px;font-weight:700;letter-spacing:-.03em">10+</span>
+          <span style="font-size:11px;color:var(--muted);margin-top:5px;padding:0 12px;line-height:1.4">more engineers &amp; designers</span>
+        </div>
+        <h3 style="font-size:14.5px;margin-top:11px">The wider team</h3>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:3px">Across build, QA &amp; research</p>
+      </div>
+    </div>
+
+    <div class="grid g3" style="gap:16px;margin-top:34px">
+      <div style="border-left:2px solid var(--blue);padding-left:18px">
+        <h3 style="font-size:16px">One team, start to finish</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">The people you meet at the start are the people who build it. No handing you over to juniors.</p>
+      </div>
+      <div style="border-left:2px solid var(--violet);padding-left:18px">
+        <h3 style="font-size:16px">You talk to engineers</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">Not account managers relaying messages. Straight answers from the people doing the work.</p>
+      </div>
+      <div style="border-left:2px solid var(--cyan);padding-left:18px">
+        <h3 style="font-size:16px">Research in the DNA</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px">Published work in machine learning and applied research sits behind the products we ship.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>The people behind it</span><span class="pg">16</span></div>
+</section>
+
+
+<!-- ══════════════════ 17 · FOUNDER'S NOTE ══════════════════ -->
+<section class="slide dark">
+  <div class="orb" style="left:-160px;top:-100px;width:520px;height:520px;background:rgba(139,92,246,.24)"></div>
+  <div class="orb" style="right:-120px;bottom:-160px;width:460px;height:460px;background:rgba(0,212,255,.18)"></div>
+
+  <div class="body" style="position:relative;justify-content:center">
+    <div style="max-width:940px">
+      <p class="eyebrow">Founder's note</p>
+      <blockquote style="font-size:38px;font-weight:500;line-height:1.34;letter-spacing:-.025em;color:rgba(255,255,255,.94)">
+        “The best way to predict the future is to invent it. We are building the tools
+        and systems that will define the next generation of digital experiences —
+        and we would like to build yours with you.”
+      </blockquote>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:38px">
+        <div style="width:56px;height:56px;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.2)">
+          <img src="assets/team-sudais-khan.jpg" alt="Sudais Khan" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:17px">Sudais Khan</p>
+          <p style="font-size:13.5px;color:rgba(255,255,255,.55);margin-top:2px">Founder &amp; CEO, Skord Labs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Founder's note</span><span class="pg">17</span></div>
+</section>
+
+
+<!-- ══════════════════ 18 · TESTIMONIALS ══════════════════ -->
+<section class="slide wash">
+  <div class="body">
+    <div class="head">
+      <p class="eyebrow">What clients say</p>
+      <h2 class="title sm">In their words</h2>
+    </div>
+
+    <div class="grid g2" style="gap:16px">
+      <div class="card" style="padding:26px 28px;background:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-70px;right:-70px;width:190px;height:190px;border-radius:999px;background:rgba(59,130,246,.12);filter:blur(60px)"></div>
+        <div style="display:flex;align-items:center;gap:12px;position:relative">
+          <img src="assets/imgi_97_user77.jpg" alt="" style="width:44px;height:44px;border-radius:999px;object-fit:cover">
+          <div><p style="font-weight:600;font-size:14.5px">Jahandad Adam</p><p style="font-size:12px;color:var(--muted)">CEO, TechVision Inc.</p></div>
+        </div>
+        <p style="font-size:15px;line-height:1.6;font-weight:600;margin-top:16px;position:relative">
+          “Skord Labs transformed our business with their software. The team's expertise and dedication went well beyond what we expected.”
+        </p>
+      </div>
+
+      <div class="card" style="padding:26px 28px;background:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-70px;right:-70px;width:190px;height:190px;border-radius:999px;background:rgba(139,92,246,.12);filter:blur(60px)"></div>
+        <div style="display:flex;align-items:center;gap:12px;position:relative">
+          <img src="assets/imgi_106_user86.jpg" alt="" style="width:44px;height:44px;border-radius:999px;object-fit:cover">
+          <div><p style="font-weight:600;font-size:14.5px">Sohail Khan</p><p style="font-size:12px;color:var(--muted)">CTO, Awez Corp</p></div>
+        </div>
+        <p style="font-size:15px;line-height:1.6;font-weight:600;margin-top:16px;position:relative">
+          “Working with Skord Labs was a turning point for our company. Their attention to detail is genuinely rare in this industry.”
+        </p>
+      </div>
+
+      <div class="card" style="padding:26px 28px;background:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-70px;right:-70px;width:190px;height:190px;border-radius:999px;background:rgba(236,72,153,.12);filter:blur(60px)"></div>
+        <div style="display:flex;align-items:center;gap:12px;position:relative">
+          <img src="assets/imgi_105_user85.jpg" alt="" style="width:44px;height:44px;border-radius:999px;object-fit:cover">
+          <div><p style="font-weight:600;font-size:14.5px">Maria Rodriguez</p><p style="font-size:12px;color:var(--muted)">Project Manager, GlobalTech</p></div>
+        </div>
+        <p style="font-size:15px;line-height:1.6;font-weight:600;margin-top:16px;position:relative">
+          “They delivered a complicated project on time and on budget. Communication was clear from start to finish.”
+        </p>
+      </div>
+
+      <div class="card" style="padding:26px 28px;background:#fff;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:-70px;right:-70px;width:190px;height:190px;border-radius:999px;background:rgba(16,185,129,.12);filter:blur(60px)"></div>
+        <div style="display:flex;align-items:center;gap:12px;position:relative">
+          <img src="assets/imgi_102_user82.jpg" alt="" style="width:44px;height:44px;border-radius:999px;object-fit:cover">
+          <div><p style="font-weight:600;font-size:14.5px">Adnan Khan</p><p style="font-size:12px;color:var(--muted)">CEO, Solar Express</p></div>
+        </div>
+        <p style="font-size:15px;line-height:1.6;font-weight:600;margin-top:16px;position:relative">
+          “Their research-led approach kept us ahead of our competition. They are genuine partners in our success, not a supplier.”
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>What clients say</span><span class="pg">18</span></div>
+</section>
+
+
+<!-- ══════════════════ 19 · CONTACT ══════════════════ -->
+<section class="slide">
+  <img src="assets/orb.png" alt=""
+       style="position:absolute;right:-200px;bottom:-190px;width:720px;opacity:.75;pointer-events:none">
+  <div class="body" style="position:relative;justify-content:center">
+    <div style="max-width:900px">
+      <p class="eyebrow">12 — Let's talk</p>
+      <h2 style="font-size:62px;line-height:1.06;letter-spacing:-.032em">
+        Tell us what you<br>
+        <span class="grad" style="display:inline-block;margin-top:8px">are trying to build</span>
+      </h2>
+      <p class="lead" style="font-size:18px;margin-top:24px;max-width:700px">
+        Whether you have a full plan or just a rough idea, the first conversation is free
+        and there is no obligation. We will tell you honestly whether we are the right
+        people for it — and if we are not, we will point you to who is.
+      </p>
+
+      <div style="display:flex;gap:14px;margin-top:34px;align-items:center">
+        <span class="cta">Start a conversation →</span>
+        <span class="cta ghost">hello@skordlabs.com</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;
+                  border-top:1px solid var(--line);padding-top:26px">
+        <div style="padding-right:24px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Email</p>
+          <p style="font-size:14.5px;margin-top:8px;font-weight:500">hello@skordlabs.com</p>
+        </div>
+        <div style="padding-right:24px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Phone</p>
+          <p style="font-size:14.5px;margin-top:8px;font-weight:500">+92 325 9327819</p>
+        </div>
+        <div style="padding-right:24px">
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Website</p>
+          <p style="font-size:14.5px;margin-top:8px;font-weight:500">skordlabs.com</p>
+        </div>
+        <div>
+          <p style="font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Based in</p>
+          <p style="font-size:14.5px;margin-top:8px;font-weight:500">Pakistan · Worldwide</p>
+        </div>
+      </div>
+
+      <img src="assets/logo-black.png" alt="Skord Labs" style="height:28px;width:auto;margin-top:44px;opacity:.9">
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 Skord Labs · Built with precision in Pakistan</span><span class="pg">19</span></div>
+</section>
+
+</div><!-- /deck -->
+
+
+<!-- ────────── screen-only helper bar ────────── -->
+<div id="bar" style="position:fixed;right:22px;bottom:22px;display:flex;gap:10px;z-index:99;
+                     font-family:'Inter Tight',system-ui,sans-serif">
+  <button onclick="window.print()"
+          style="background:linear-gradient(135deg,#203eec 0%,#00d4ff 100%);color:#fff;border:0;
+                 padding:13px 26px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;
+                 box-shadow:0 4px 20px rgba(32,62,236,.35);font-family:inherit">
+    Save as PDF
+  </button>
+</div>
+
+<style>
+/* ============ PRINT / PDF ============ */
+@page{
+  size:1280px 720px;
+  margin:0;
+}
+
+@media print{
+  body{background:#fff}
+  .deck{display:block;padding:0;gap:0}
+  #bar{display:none !important}
+  .slide{
+    width:1280px;
+    height:720px;
+    margin:0;
+    border-radius:0;
+    box-shadow:none;
+    break-after:page;
+    page-break-after:always;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .slide:last-child{break-after:auto;page-break-after:auto}
+}
+
+/* on-screen: scale the deck down on small displays so it stays readable */
+@media screen and (max-width:1400px){
+  .deck{zoom:.82}
+}
+@media screen and (max-width:1180px){
+  .deck{zoom:.66}
+}
+@media screen and (max-width:900px){
+  .deck{zoom:.48}
+}
+</style>
+
+</body>
+</html>

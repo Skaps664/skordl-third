@@ -498,3 +498,12 @@
 .clutch-footer-widget {
   /* No border, background, or padding - clean integration */
 }
+
+/* Service FAQ accordion: hide native disclosure markers */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  content: "";
+}

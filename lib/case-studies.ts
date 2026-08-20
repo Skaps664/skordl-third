@@ -17,6 +17,166 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: 12,
+    title: "Boxlytics Mechanics-AI Packaging Platform",
+    slug: "boxlytics-mechanics-ai-packaging-platform",
+    category: "AI Simulation Platform",
+    description:
+      "A mechanics-AI platform for corrugated packaging optimization that virtually predicts box strength, replacing slow prototype-test-redesign loops with sub-second simulation.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Boxlytics was built for packaging engineers who lose weeks to physical prototype cycles. The platform pairs validated mechanics models with machine learning trained on 200,000+ simulations, so teams can predict Box Compression Test (BCT) performance virtually and only build the designs worth building.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Box Strength Predictor: BCT prediction in under a second from dimensions, liner and fluting grades, and flute geometry</li>
+        <li>Force-displacement response with a Pass / Marginal / Review verdict against a user-defined requirement</li>
+        <li>Explicit de-rating factor chain: environment, handling, creep, and factor of safety itemised instead of hidden inside one safety number</li>
+        <li>Optimized Box Selector: sweeps allowed board combinations and returns a ranked shortlist by cost or CO&#8322;</li>
+        <li>Out-of-band configurations kept visible and tagged rather than silently dropped</li>
+        <li>Origin and destination climate scaled into paper properties, plus cost, empty-box weight, and CO&#8322; per configuration</li>
+        <li>Simulation history with every run saved and exportable as PDF or portable JSON</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>Two integrated modules, one decision-ready workflow: validate a specific design in the Predictor, or discover the best one in the Optimizer and send it straight back into the Predictor for final validation. Engineering rigor stays visible at every step so results can be defended, not just trusted.</p>
+
+      <h2>Outcome</h2>
+      <p>Boxlytics delivers 93% BCT prediction accuracy at greater than 98% ML fidelity (R&#178;), turning a multi-week prototype loop into a sub-second cloud workflow and lowering both material cost and packaging waste.</p>
+    `,
+    image: "/case/boxlytics-1.png",
+    tags: ["AI/ML", "Simulation", "Packaging", "SaaS", "Sustainability"],
+    results: [
+      "93% BCT prediction accuracy with >98% ML fidelity (R2)",
+      "Sub-second analysis trained on 200,000+ simulations",
+      "Prototype-test-redesign cycles compressed into one cloud workflow",
+    ],
+    client: "Boxlytics",
+    duration: "Multi-phase build",
+    team: ["ML Engineers", "Simulation Engineers", "Full-stack Team", "Product Design"],
+    projectUrl: "https://boxlytics.onyxleaf.co/",
+  },
+  {
+    id: 13,
+    title: "ConfiguraX CPQ and AI Workflow Engine",
+    slug: "configurax-cpq-ai-workflow-engine",
+    category: "Enterprise SaaS Platform",
+    description:
+      "A new-generation CPQ and AI workflow engine that lets enterprise teams model configuration rules visually, automate approvals, and generate accurate quotes from one platform.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>ConfiguraX was built as a modern operating layer for high-stakes product configuration - for teams that want visual speed without giving up engineering rigor. Product, sales, and operations work in a single adaptive revenue workflow instead of a stack of disconnected tools.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>AI Copilot that turns plain-language business rules into production-ready configuration logic in minutes</li>
+        <li>Real-time decision engine evaluating pricing, dependencies, and constraints while users configure</li>
+        <li>Visual graph builder for constraints, dependencies, and pricing rules</li>
+        <li>One-click deployment to web, CRM, CPQ, and partner channels with version control</li>
+        <li>Live analytics on conversion drop-off, invalid paths, and high-intent combinations</li>
+        <li>Governance layer with role-based controls, audit logs, and approval workflows</li>
+        <li>Enterprise SSO, global API delivery, and a SOC 2-aligned, ISO-ready security posture</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>The platform follows a three-stage execution flow - Model, Deploy, Optimize - so a rule authored in the visual graph reaches production channels with version control, then feeds intent analytics and AI recommendations back into the next iteration.</p>
+
+      <h2>Outcome</h2>
+      <p>ConfiguraX ships enterprise-grade configuration journeys that convert: 42% higher quote completion, 3.8x faster workflow delivery, and 99.95% platform availability.</p>
+    `,
+    image: "/case/configuraX-1.png",
+    tags: ["CPQ", "Enterprise SaaS", "AI Workflows", "Governance", "API-first"],
+    results: [
+      "42% higher quote completion",
+      "3.8x faster workflow delivery",
+      "99.95% platform availability with enterprise SSO and audit logs",
+    ],
+    client: "ConfiguraX",
+    duration: "Product lifecycle",
+    team: ["Solution Architects", "Platform Engineers", "AI Engineers", "Product Design"],
+    projectUrl: "https://www.configurax.com/",
+  },
+  {
+    id: 14,
+    title: "FindiMoto Automotive Marketplace",
+    slug: "findimoto-automotive-marketplace",
+    category: "Marketplace Platform",
+    description:
+      "A South African car marketplace connecting buyers and sellers with a multi-filter showroom, trending model discovery, inspection services, and a community layer.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>FindiMoto set out to make finding the right car straightforward for South African buyers. We built a marketplace where discovery, verification, and selling all live in one product - from a six-parameter search bar to province-level browsing and third-party inspection services.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Advanced search across city, make and model, price range, year, mileage, and extended filters</li>
+        <li>Showroom browsing with province filtering across all listings</li>
+        <li>Curated discovery rails: Trending Wheels, Trending Coupe, Trending SUVs, and Trending Hybrid &amp; Electric</li>
+        <li>Listing cards with make, model year, and body type across Sedan, Coupe, and SUV segments</li>
+        <li>Sell A Car flow for private and dealer sellers</li>
+        <li>Inspection Services module for pre-purchase vehicle verification</li>
+        <li>Community and blog sections plus a support layer with Help Center, Safety Tips, and FAQ</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>Discovery is organised by intent rather than one flat listing grid - enthusiasts, families, and eco-conscious buyers each land on a rail built for them, while inspection services and safety guidance carry the trust load that used-car marketplaces live or die on.</p>
+
+      <h2>Outcome</h2>
+      <p>FindiMoto operates as a full marketplace stack for the South African market, connecting buyers and sellers with verified listings, structured discovery, and an ecosystem of support services around every transaction.</p>
+    `,
+    image: "/case/findimoto-1.png",
+    tags: ["Marketplace", "Automotive", "Search & Filters", "South Africa"],
+    results: [
+      "Six-parameter search with province-level filtering",
+      "Segment-based discovery rails for Sedan, Coupe, SUV, and EV buyers",
+      "Inspection services and safety layer built into the buying journey",
+    ],
+    client: "FindiMoto Solutions (Pty) Ltd",
+    duration: "Multi-phase delivery",
+    team: ["Product Designers", "Full-stack Engineers", "Search & Data Team"],
+    projectUrl: "https://www.findimoto.co.za/",
+  },
+  {
+    id: 15,
+    title: "Mens Confidence Wellness Commerce Store",
+    slug: "mens-confidence-wellness-commerce-store",
+    category: "Shopify Commerce + Brand",
+    description:
+      "Pakistan's destination for men's grooming, skincare, wellness, and performance - a Shopify storefront built around trust signals, certified products, and WhatsApp-led support.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Mens Confidence was founded to break the silence around men's daily wellness needs in Pakistan, where the category is crowded with uncertified products making overnight claims. The brief was a premium, dedicated storefront that sells credibility as hard as it sells product.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Shopify storefront with a category-first structure: Wellness &amp; Performance, Skin Care &amp; Grooming</li>
+        <li>Best Sellers merchandising with regular and sale pricing, including variant-based "From" pricing</li>
+        <li>Trust architecture: DRAP registration, dermatologist and expert approval, and premium sourcing messaging</li>
+        <li>24/7 WhatsApp support entry points for routine and product guidance</li>
+        <li>Live social-proof notifications showing recent purchases by city</li>
+        <li>Editorial blog covering pollution and skin, false-claim safety, and men's energy and fatigue</li>
+        <li>Email capture for new collections and exclusive offers, plus full policy and contact pages</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>The positioning is deliberately narrow - "we don't sell everything, we recommend what works." Every section reinforces one of four promises: dedicated support, premium and traceable sourcing, ingredient-backed formulations like L-Arginine and Niacinamide, and certified expert approval.</p>
+
+      <h2>Outcome</h2>
+      <p>Mens Confidence launched as a cohesive men's wellness brand with a conversion-focused storefront, an evidence-led content engine, and support workflows that turn first-time buyers into routine customers.</p>
+    `,
+    image: "/case/mensconfidence-1.png",
+    tags: ["Shopify", "Ecommerce", "Brand", "Wellness", "Pakistan"],
+    results: [
+      "Category-first storefront across grooming, skincare, wellness, and performance",
+      "Trust-led conversion design with DRAP certification and expert approval signals",
+      "24/7 WhatsApp support and social-proof purchase notifications",
+    ],
+    client: "Mens Confidence",
+    duration: "Launch cycle",
+    team: ["Brand Team", "Shopify Engineers", "Content & Growth"],
+    projectUrl: "https://mensconfidence.pk/",
+  },
+  {
     id: 5,
     title: "Eazstart Startup Operating System",
     slug: "eazstart-startup-operating-system",
