@@ -38,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Products
     {
+      url: `${baseUrl}/products/orbit`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/products/eazstart`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

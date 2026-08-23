@@ -123,6 +123,7 @@ const navGroups: NavGroup[] = [
     number: "04",
     items: [
       { label: "All Products", href: "/products" },
+      { label: "Orbit", href: "/products/orbit" },
       { label: "CastAIPro", href: "/products/castaipro" },
       { label: "RedByOne", href: "/products/redbyone" },
       { label: "ConfiguraX", href: "/products/configurax" },

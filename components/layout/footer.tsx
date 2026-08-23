@@ -12,6 +12,7 @@ const socialLinks = [
 ]
 
 const footerProducts = [
+  { href: "/products/orbit", label: "Orbit", tag: "Live" },
   { href: "/products/castaipro", label: "CastAIPro", tag: "Beta" },
   { href: "/products/redbyone", label: "RedByOne", tag: "Live" },
   { href: "/products/configurax", label: "ConfiguraX", tag: "Live" },

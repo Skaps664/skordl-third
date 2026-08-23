@@ -17,6 +17,48 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: 15,
+    title: "Orbit Offline-first Android Task Manager",
+    slug: "orbit-offline-first-android-task-manager",
+    category: "Mobile App",
+    description:
+      "An offline-first task manager for Android. Drawers, per-day repeating tasks and on-device reminders, with no account required and no server holding your data.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Orbit is a task manager for Android, built for the case most to-do apps handle badly: no signal, no account, and a routine you actually need to track over time. We built it around a simple constraint - the app should be fully useful before you sign in to anything.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Drawers: colour- and icon-coded task lists carrying deadlines, priority, notes, and tags</li>
+        <li>Per-day repeating tasks that record completion for each day separately instead of rolling one checkbox forward</li>
+        <li>Four on-device reminders per task: day start, one hour before, ten minutes before, and at the deadline</li>
+        <li>Calendar view covering one-off and repeating tasks, holding real history rather than a single most-recent state</li>
+        <li>Home-screen widget for ticking tasks off and switching drawers without opening the app</li>
+        <li>Search across titles, notes, and tags, with no loading state because nothing is fetched</li>
+        <li>Optional Google Drive backup scoped to drive.appdata, off by default</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>Repeating tasks were the part we spent the most time on. Most apps treat a recurring task as a single row with a checkbox, so ticking today quietly rolls it to tomorrow and yesterday disappears. Orbit records completion per day, which means a skipped day stays visibly missed and the calendar holds a real history.</p>
+      <p>Reminders are scheduled on the device as exact alarms, so nothing depends on a push server being reachable. There is no Orbit server and no Orbit account - tasks are stored on the device and are never transmitted to us. Signing in with Google does exactly one thing: back up to a private application-data folder in the user&#39;s own Google Drive, using the drive.appdata scope, which cannot reach any other file in their Drive. No analytics, no advertising, no tracking.</p>
+
+      <h2>Outcome</h2>
+      <p>Orbit is distributed as a signed APK rather than through Google Play. Version 1.1.0 runs on Android 7.0 and newer, weighs 21.2 MB, and is free.</p>
+    `,
+    image: "/case/orbit-1.png",
+    tags: ["Android", "Flutter", "Offline-first", "Privacy", "Productivity"],
+    results: [
+      "Released as v1.1.0 for Android 7.0 and newer",
+      "Zero servers and zero accounts - tasks never leave the device",
+      "Per-day completion history for repeating tasks",
+    ],
+    client: "Skord Labs",
+    duration: "Released - v1.1.0",
+    team: ["Flutter Engineers", "Android Platform", "Product Design"],
+    galleryImages: ["/case/orbit-2.png", "/case/orbit-3.png"],
+    projectUrl: "https://orbit.skordlabs.com",
+  },
+  {
     id: 12,
     title: "Boxlytics Mechanics-AI Packaging Platform",
     slug: "boxlytics-mechanics-ai-packaging-platform",

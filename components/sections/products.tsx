@@ -8,6 +8,16 @@ import { useEffect, useState } from "react"
 
 const products = [
   {
+    id: 9,
+    name: "Orbit",
+    tagline: "Offline-first Android Task Manager",
+    description: "Colour-coded drawers, per-day repeating tasks, and on-device reminders. No account, no servers, and fully useful before you sign in to anything.",
+    link: "/products/orbit",
+    status: "Live",
+    image: "/case/orbit-1.png",
+    tags: ["Android", "Productivity", "Privacy"],
+  },
+  {
     id: 6,
     name: "CastAIPro",
     tagline: "AI Face & Voice Character Studio",

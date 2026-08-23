@@ -16,6 +16,7 @@ const sitemapSections = [
   {
     title: "Products",
     links: [
+      { href: "/products/orbit", label: "Orbit" },
       { href: "/products/castaipro", label: "CastAIPro" },
       { href: "/products/redbyone", label: "RedByOne" },
       { href: "/products/configurax", label: "ConfiguraX" },
