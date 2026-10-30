@@ -31,6 +31,7 @@ const sitemapSections = [
     links: [
       { href: "/services/ai-systems", label: "AI Systems & Automation" },
       { href: "/services/ai-solutions", label: "AI Solutions" },
+      { href: "/services/digital-marketing", label: "Digital Marketing & Growth" },
       { href: "/services/ai-social-media-marketing", label: "AI Social Media Marketing Setup" },
       { href: "/services/brand-building", label: "Brand Building & Rebranding" },
       { href: "/services/mvp-development", label: "MVP Development" },

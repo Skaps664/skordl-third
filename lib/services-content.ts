@@ -1206,7 +1206,7 @@ export const servicesContent: Record<string, ServiceContent> = {
             "Cost optimisation reviews",
             "Quarterly governance audit",
           ],
-          timeline: "Monthly, 6-month minimum",
+          timeline: "Monthly, 3-month minimum",
         },
       ],
     },
@@ -1268,7 +1268,7 @@ export const servicesContent: Record<string, ServiceContent> = {
     ],
     glow: "from-fuchsia-500/20 to-rose-500/20",
     primaryCta: { label: "Set up AI social media", href: "/contact" },
-    secondaryCta: { label: "Explore brand building", href: "/services/brand-building" },
+    secondaryCta: { label: "Explore digital marketing", href: "/services/digital-marketing" },
     metrics: [
       { value: "3-4 weeks", label: "To a running system" },
       { value: "5x", label: "Content output per week" },
@@ -1601,6 +1601,322 @@ export const servicesContent: Record<string, ServiceContent> = {
       description:
         "We will audit your current channels and show you what a running AI content system would look like for your brand.",
       buttonLabel: "Book a social media consultation",
+    },
+  },
+  "digital-marketing": {
+    slug: "digital-marketing",
+    metaTitle: "Digital Marketing & Growth Services | Skord Labs",
+    metaDescription:
+      "Performance marketing, SEO, social media, content, and conversion optimisation run by one growth team. Skord Labs plans, executes, and measures marketing that ties spend to revenue.",
+    keywords: [
+      "digital marketing agency",
+      "performance marketing",
+      "SEO services",
+      "social media marketing",
+      "Google Ads",
+      "Meta Ads",
+      "conversion rate optimisation",
+      "growth marketing",
+    ],
+    eyebrow: "Services / Digital Marketing & Growth",
+    titleLead: "Digital marketing",
+    titleGradient: "measured against revenue",
+    intro:
+      "Most marketing reports clicks and impressions. We run paid media, SEO, social, and content as one growth system, with tracking that connects every channel to leads, sales, and cost of acquisition.",
+    heroHighlights: [
+      "Paid media on Google, Meta, LinkedIn, and TikTok",
+      "Technical and content SEO",
+      "Social media and content production",
+      "Conversion optimisation and analytics",
+    ],
+    glow: "from-rose-500/20 to-violet-500/20",
+    primaryCta: { label: "Plan your growth", href: "/contact" },
+    secondaryCta: { label: "Explore AI social media", href: "/services/ai-social-media-marketing" },
+    metrics: [
+      { value: "2 weeks", label: "Audit and growth plan" },
+      { value: "6+", label: "Channels managed" },
+      { value: "Weekly", label: "Performance reporting" },
+      { value: "90 days", label: "Roadmap per quarter" },
+    ],
+    challenges: {
+      heading: "Where marketing budgets leak",
+      intro: "The problem is rarely the channel. It is running channels in isolation with no shared measurement.",
+      items: [
+        {
+          problem: "Ad spend goes up but nobody can say which campaigns produce customers.",
+          solution: "Conversion tracking, attribution, and CRM integration so every channel reports cost per lead and cost per sale.",
+        },
+        {
+          problem: "Organic traffic has flatlined because the site was never built for search.",
+          solution: "Technical SEO fixes, keyword strategy, and a content plan built around what buyers actually search for.",
+        },
+        {
+          problem: "Social media posts go out, but they do not move the business.",
+          solution: "Content pillars tied to offers and funnels, with paid amplification behind the posts that work.",
+        },
+        {
+          problem: "Traffic arrives and leaves without converting.",
+          solution: "Landing page optimisation, A/B testing, and funnel fixes before more budget goes into acquisition.",
+        },
+        {
+          problem: "Agencies, freelancers, and in-house staff each own a piece and nobody owns the result.",
+          solution: "One growth lead accountable for the full plan, the budget, and the numbers.",
+        },
+      ],
+    },
+    benefits: {
+      heading: "How you benefit from working with us",
+      intro: "Marketing run by a team that also builds software, so tracking, landing pages, and automation are done properly.",
+      items: [
+        {
+          icon: Target,
+          title: "Spend tied to outcomes",
+          description:
+            "Every campaign is measured on leads, sales, and acquisition cost, not vanity metrics.",
+          proof: "Cost per lead and cost per sale on every report",
+        },
+        {
+          icon: Search,
+          title: "Search that compounds",
+          description:
+            "Technical SEO and content that keep producing traffic long after a campaign ends.",
+          proof: "Technical audit, keyword map, and content calendar",
+        },
+        {
+          icon: Megaphone,
+          title: "Every channel, one plan",
+          description:
+            "Paid, organic, social, and email work from the same calendar, messaging, and budget.",
+          proof: "Single growth roadmap reviewed every quarter",
+        },
+        {
+          icon: Gauge,
+          title: "Pages that convert",
+          description:
+            "Our engineers build and test landing pages, so conversion work does not wait on a separate dev team.",
+          proof: "A/B tests shipped by the same team that runs the ads",
+        },
+        {
+          icon: LineChart,
+          title: "Reporting you can act on",
+          description:
+            "Dashboards that show what is working, what is not, and where the next budget should go.",
+          proof: "Weekly dashboard and monthly strategy review",
+        },
+        {
+          icon: Workflow,
+          title: "Automation that follows up",
+          description:
+            "Email and messaging flows that nurture leads automatically instead of letting them go cold.",
+          proof: "Lead nurture and retention flows connected to your CRM",
+        },
+      ],
+    },
+    capabilities: {
+      heading: "What we deliver",
+      intro: "Full-funnel marketing, from first impression to repeat customer.",
+      groups: [
+        {
+          title: "Performance marketing",
+          description: "Paid acquisition planned around margins and payback, not reach.",
+          items: [
+            "Google Search, Shopping, and Performance Max",
+            "Meta Ads (Facebook and Instagram)",
+            "LinkedIn Ads for B2B",
+            "TikTok and YouTube Ads",
+            "Retargeting and lookalike audiences",
+          ],
+        },
+        {
+          title: "Search engine optimisation",
+          description: "Technical foundations and content that rank for buyer-intent searches.",
+          items: [
+            "Technical SEO audits and fixes",
+            "Keyword research and site architecture",
+            "On-page optimisation",
+            "Content strategy and production",
+            "Local SEO and Google Business Profile",
+          ],
+        },
+        {
+          title: "Social media and content",
+          description: "Content that builds the brand and feeds the funnel.",
+          items: [
+            "Social media strategy and calendars",
+            "Content production: posts, reels, and video",
+            "Community management",
+            "Influencer and creator partnerships",
+            "AI-assisted content workflows",
+          ],
+        },
+        {
+          title: "Conversion and analytics",
+          description: "Measurement and optimisation across the whole funnel.",
+          items: [
+            "GA4, Tag Manager, and server-side tracking",
+            "Attribution and CRM integration",
+            "Landing page design and A/B testing",
+            "Email and marketing automation",
+            "Performance dashboards",
+          ],
+        },
+      ],
+    },
+    audience: {
+      heading: "Who this is for",
+      intro: "Companies that want marketing to be a predictable growth channel.",
+      items: [
+        {
+          title: "E-commerce and D2C brands",
+          description: "Stores that need profitable acquisition and better repeat purchase rates.",
+          signals: ["Rising ad costs", "Flat conversion rate", "Low repeat purchase"],
+        },
+        {
+          title: "B2B and service companies",
+          description: "Firms that need a steady pipeline of qualified leads, not just traffic.",
+          signals: ["Inconsistent lead flow", "Long sales cycles", "No attribution"],
+        },
+        {
+          title: "Startups going to market",
+          description: "Teams launching a product who need positioning, channels, and early traction.",
+          signals: ["New product launch", "Unproven channels", "Limited budget"],
+        },
+      ],
+    },
+    process: {
+      heading: "How an engagement runs",
+      intro: "Audit first, then a plan, then disciplined execution with a fixed reporting rhythm.",
+      steps: [
+        {
+          phase: "Audit",
+          duration: "Week 1-2",
+          description: "We review your channels, tracking, site, and competitors to find where budget and opportunity are being lost.",
+          details: ["Channel and account audit", "Tracking and attribution review", "Competitor and keyword analysis"],
+        },
+        {
+          phase: "Plan",
+          duration: "Week 2-3",
+          description: "A 90-day growth roadmap with channel mix, budget allocation, targets, and the content calendar.",
+          details: ["Channel mix and budget plan", "KPIs and targets", "Creative and content calendar"],
+        },
+        {
+          phase: "Launch",
+          duration: "Week 3-6",
+          description: "Tracking fixed, campaigns and content live, landing pages built and tested.",
+          details: ["Tracking and dashboards live", "Campaign launch", "Landing pages and first tests"],
+        },
+        {
+          phase: "Optimise",
+          duration: "Ongoing",
+          description: "Weekly optimisation, monthly reviews, and a refreshed roadmap every quarter.",
+          details: ["Weekly reporting", "Budget reallocation to winners", "Quarterly strategy review"],
+        },
+      ],
+    },
+    deliverables: {
+      heading: "What you get",
+      intro: "Everything is set up in your own accounts and stays yours.",
+      groups: [
+        {
+          title: "Strategy",
+          items: ["Marketing audit report", "90-day growth roadmap", "Channel and budget plan", "Messaging and positioning guide"],
+        },
+        {
+          title: "Execution",
+          items: ["Managed ad campaigns", "SEO fixes and content", "Social media calendar and content", "Landing pages and tests"],
+        },
+        {
+          title: "Measurement",
+          items: ["Tracking and attribution setup", "Live performance dashboard", "Weekly reports", "Monthly strategy review"],
+        },
+      ],
+    },
+    stack: {
+      heading: "Tools we work with",
+      intro: "We use your existing accounts where possible, so all data and history stay with you.",
+      groups: [
+        { label: "Advertising", items: ["Google Ads", "Meta Ads Manager", "LinkedIn Campaign Manager", "TikTok Ads"] },
+        { label: "SEO", items: ["Google Search Console", "Ahrefs", "Semrush", "Screaming Frog"] },
+        { label: "Analytics", items: ["GA4", "Google Tag Manager", "Looker Studio", "Hotjar"] },
+        { label: "Automation", items: ["HubSpot", "Klaviyo", "Mailchimp", "Zapier"] },
+      ],
+    },
+    engagements: {
+      heading: "Ways to work with us",
+      intro: "Start with an audit, or hand us the full growth function.",
+      options: [
+        {
+          name: "Growth Audit",
+          bestFor: "Teams that want to know where budget is being lost before changing anything.",
+          includes: [
+            "Channel and tracking audit",
+            "Competitor and keyword analysis",
+            "Prioritised recommendations",
+            "90-day growth roadmap",
+          ],
+          timeline: "2 weeks",
+        },
+        {
+          name: "Channel Management",
+          bestFor: "Companies that need one or two channels run properly, such as paid ads or SEO.",
+          includes: [
+            "Campaign or SEO management",
+            "Tracking and dashboard setup",
+            "Weekly optimisation",
+            "Monthly reporting",
+          ],
+          timeline: "Monthly, 3-month minimum",
+        },
+        {
+          name: "Full Growth Team",
+          bestFor: "Businesses that want paid, organic, social, content, and conversion run together.",
+          includes: [
+            "Dedicated growth lead",
+            "All channels under one plan",
+            "Landing pages and A/B testing",
+            "Quarterly strategy reviews",
+          ],
+          timeline: "Monthly, 3-month minimum",
+        },
+      ],
+    },
+    relatedCaseStudySlugs: [
+      "mens-confidence-wellness-commerce-store",
+      "haarshe-cross-channel-commerce",
+      "solar-express-end-to-end-commerce-system",
+    ],
+    faqs: [
+      {
+        question: "Do we need to change our existing ad accounts?",
+        answer:
+          "No. We work inside your existing Google, Meta, and analytics accounts so your data and history stay with you. If accounts do not exist yet, we create them in your name.",
+      },
+      {
+        question: "How is ad spend handled?",
+        answer:
+          "Ad spend is paid directly by you to the platforms. Our fee covers strategy, management, creative, and reporting, so there is no markup hidden inside your media budget.",
+      },
+      {
+        question: "How soon will we see results?",
+        answer:
+          "Paid campaigns produce readable data within the first few weeks. SEO typically takes three to six months to compound. The audit and roadmap set realistic targets for each channel before we start.",
+      },
+      {
+        question: "Can you work alongside our in-house team?",
+        answer:
+          "Yes. Many clients keep an in-house marketer for brand and community while we run paid media, SEO, tracking, and conversion work. Everything is documented so your team can see exactly what we are doing.",
+      },
+      {
+        question: "Which markets do you run campaigns in?",
+        answer:
+          "We run campaigns for local, regional, and international audiences, and plan language, targeting, and budgets for each market separately.",
+      },
+    ],
+    cta: {
+      title: "Ready to make marketing predictable?",
+      description:
+        "Start with a growth audit. We will show you where budget is leaking and what a 90-day plan would look like for your business.",
+      buttonLabel: "Book a growth audit",
     },
   },
   "mvp-development": {
@@ -3118,7 +3434,7 @@ export const servicesContent: Record<string, ServiceContent> = {
             "Performance and data health reviews",
             "Internal team enablement",
           ],
-          timeline: "Monthly, 6-month minimum",
+          timeline: "Monthly, 3-month minimum",
         },
       ],
     },

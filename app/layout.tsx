@@ -102,6 +102,13 @@ export default function RootLayout({
             name: "Technical Consulting",
           },
         },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Digital Marketing & Growth",
+          },
+        },
       ],
     },
   }

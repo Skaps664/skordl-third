@@ -34,6 +34,18 @@ const services = [
     ],
   },
   {
+    title: "Digital marketing & growth",
+    href: "/services/digital-marketing",
+    items: [
+      "Performance marketing (Google & Meta Ads)",
+      "SEO & content strategy",
+      "Social media management",
+      "Conversion rate optimisation",
+      "Marketing analytics & attribution",
+      "Email & marketing automation",
+    ],
+  },
+  {
     title: "Develop your MVP with us",
     href: "/services/mvp-development",
     items: [

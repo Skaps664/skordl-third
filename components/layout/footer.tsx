@@ -25,6 +25,7 @@ const footerProducts = [
 const footerServices = [
   { href: "/services/ai-systems", label: "AI Systems & Automation" },
   { href: "/services/mvp-development", label: "MVP Development" },
+  { href: "/services/digital-marketing", label: "Digital Marketing & Growth" },
   { href: "/services/ai-social-media-marketing", label: "AI Social Media Setup" },
   { href: "/services/brand-building", label: "Brand Building & Rebranding" },
   { href: "/services/ai-solutions", label: "AI Solutions" },

@@ -17,6 +17,170 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: 16,
+    title: "Skord ERP Unified Operations Platform",
+    slug: "skord-erp-unified-operations-platform",
+    category: "Enterprise Resource Planning",
+    description:
+      "An in-house ERP that runs inventory, purchasing, production, sales, and finance on one data model, with approval workflows and real-time operational reporting across multiple warehouses.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Skord ERP is our in-house enterprise resource planning platform. We built it to prove out the architecture we use for operations-heavy businesses: one shared data model where a purchase order, a production run, a stock movement, and an invoice all reference the same records instead of being reconciled between separate tools.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Inventory management across multiple warehouses, with stock levels, reorder points, and low-stock alerts</li>
+        <li>Purchasing with supplier records, purchase orders, and goods received against each order</li>
+        <li>Multi-step approval workflows, with value thresholds that route large orders to finance</li>
+        <li>Production orders that consume raw materials and produce finished goods in stock</li>
+        <li>Sales orders, invoicing, receivables, and a general ledger</li>
+        <li>Operations dashboard covering inventory value, open orders, production status, and warehouse utilisation</li>
+        <li>Role-based access so warehouse, purchasing, and finance teams each see what they need</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>ERP projects fail when every module is designed in isolation. We started from the data model: items, locations, stock movements, and documents. Every module writes to the same movement ledger, which means inventory value, cost of goods, and stock on hand are always derived from one source rather than synchronised.</p>
+      <p>Approvals are configured as rules rather than hard-coded steps, so a business can change who approves what, and at which value, without a code change.</p>
+
+      <h2>Outcome</h2>
+      <p>Skord ERP is the foundation we build client operations systems on. Modules can be deployed individually, for example inventory and purchasing first, and extended into production and finance as the business grows.</p>
+    `,
+    image: "/case/skord-erp-1.png",
+    tags: ["ERP", "Inventory", "Purchasing", "Finance", "Workflow Automation"],
+    results: [
+      "Inventory, purchasing, production, and finance on one data model",
+      "Rule-based approval workflows with value thresholds",
+      "Real-time operations dashboard across warehouses",
+    ],
+    client: "Skord Labs (In-house platform)",
+    duration: "In-house platform",
+    team: ["Backend Engineers", "Product Design", "Quality Engineering"],
+    galleryImages: ["/case/skord-erp-2.png"],
+  },
+  {
+    id: 17,
+    title: "Skord CRM Enterprise Sales Platform",
+    slug: "skord-crm-enterprise-sales-platform",
+    category: "Customer Relationship Management",
+    description:
+      "An in-house CRM for B2B sales teams: pipeline management, deal tracking, activity history, forecasting, and automated follow-up sequences in one workspace.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Skord CRM is our in-house customer relationship management platform, built for B2B teams with long sales cycles and multiple stakeholders per deal. The goal was a CRM that sales teams actually keep up to date, because it does the admin for them.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Visual pipeline with configurable stages, deal values, and drag-and-drop progression</li>
+        <li>Deal records with contacts, roles, documents, and a full activity timeline</li>
+        <li>Email, call, meeting, and task logging against every deal and contact</li>
+        <li>Weighted forecasting by stage probability, owner, and quarter</li>
+        <li>Automated follow-up sequences and workflow rules</li>
+        <li>Next-best-action suggestions based on deal activity and engagement</li>
+        <li>Reporting on pipeline value, win rate, and sales cycle length</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>Most CRMs fail because data entry is a chore. We designed the activity model so that emails, meetings, and tasks attach to deals automatically, and the pipeline view surfaces what needs attention instead of only listing records.</p>
+      <p>Forecasting is calculated from stage probabilities and close dates, so leadership sees a weighted number rather than the sum of every open deal.</p>
+
+      <h2>Outcome</h2>
+      <p>Skord CRM is the base we adapt for client sales teams, and it integrates with our ERP so that a won deal can flow straight into a sales order.</p>
+    `,
+    image: "/case/skord-crm-1.png",
+    tags: ["CRM", "Sales Pipeline", "Forecasting", "Automation", "B2B"],
+    results: [
+      "Pipeline, deals, contacts, and activity in one workspace",
+      "Weighted forecasting by stage, owner, and quarter",
+      "Automated follow-up sequences and next-best actions",
+    ],
+    client: "Skord Labs (In-house platform)",
+    duration: "In-house platform",
+    team: ["Full-stack Engineers", "Product Design", "Data Engineering"],
+    galleryImages: ["/case/skord-crm-2.png"],
+  },
+  {
+    id: 18,
+    title: "Skord People HRMS and Payroll",
+    slug: "skord-people-hrms-payroll",
+    category: "HR & Payroll Platform",
+    description:
+      "An in-house human resources platform covering employee records, attendance, leave, approvals, and payroll runs, built for multi-office organisations.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Skord People is our in-house HRMS and payroll platform. It brings the full employee lifecycle into one system: onboarding, attendance, leave, approvals, performance, and monthly payroll, across multiple offices.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Employee directory with profiles, departments, reporting lines, and documents</li>
+        <li>Attendance tracking with on-time, late, and absence reporting</li>
+        <li>Leave management with balances, policies, and manager approvals</li>
+        <li>Expense claims and shift swaps through the same approval inbox</li>
+        <li>Payroll runs with gross pay, deductions, tax, overtime, and net pay per employee</li>
+        <li>Payslip generation and a verification step before payroll is approved</li>
+        <li>Hiring module for open roles and candidates</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>Payroll errors usually come from data that changed after it was entered: a late leave approval, an overtime adjustment, a new joiner. We built payroll as a reviewable run that pulls attendance and leave at the point of calculation, flags anything unusual, and requires verification before money moves.</p>
+      <p>Approvals for leave, expenses, and shift changes share one inbox, so managers handle everything in a single place.</p>
+
+      <h2>Outcome</h2>
+      <p>Skord People gives HR and finance one source of truth for headcount and payroll, and connects to Skord ERP so payroll costs post directly to the ledger.</p>
+    `,
+    image: "/case/skord-people-1.png",
+    tags: ["HRMS", "Payroll", "Attendance", "Leave Management", "Approvals"],
+    results: [
+      "Employee records, attendance, leave, and payroll in one system",
+      "Reviewable payroll runs with verification before approval",
+      "Single approval inbox for leave, expenses, and shifts",
+    ],
+    client: "Skord Labs (In-house platform)",
+    duration: "In-house platform",
+    team: ["Backend Engineers", "Product Design", "Quality Engineering"],
+    galleryImages: ["/case/skord-people-2.png"],
+  },
+  {
+    id: 19,
+    title: "Skord Agents AI Automation Platform",
+    slug: "skord-agents-ai-automation-platform",
+    category: "AI Agents & Automation",
+    description:
+      "An in-house platform for building, running, and monitoring AI agents: customer support agents grounded in company knowledge, document processing, and workflow automation with human review.",
+    content: `
+      <h2>Project Overview</h2>
+      <p>Skord Agents is our in-house AI platform. It lets a business deploy AI agents that answer from its own policies and data, take actions through connected systems, and hand off to a person when a decision needs human judgement.</p>
+
+      <h2>What We Built</h2>
+      <ul>
+        <li>Agent console for configuring and testing agents before they go live</li>
+        <li>Knowledge sources with retrieval, so every answer cites the policy or record it came from</li>
+        <li>Tool calling into business systems such as order lookups and ERP records</li>
+        <li>Guardrails: answer-only-from-sources mode, PII redaction, and value limits that require a human</li>
+        <li>Visual workflow builder for automations such as invoice intake and document extraction</li>
+        <li>Confidence thresholds that route uncertain cases to human review</li>
+        <li>Conversation logs, evaluations, and analytics on resolution and handoff rates</li>
+      </ul>
+
+      <h2>Approach</h2>
+      <p>The hard part of production AI is not generating text; it is making sure the output is grounded, auditable, and safe to act on. Every agent response carries citations to its sources, every tool call is logged, and any action above a configured risk level waits for a person.</p>
+      <p>Workflows combine AI steps with deterministic checks. In the invoice intake flow, for example, extracted data is matched against purchase orders in the ERP before a bill is drafted, and low-confidence extractions go to the finance team.</p>
+
+      <h2>Outcome</h2>
+      <p>Skord Agents is the platform behind the AI systems we deliver for clients, and it connects to Skord ERP, CRM, and People so agents can work with real business data.</p>
+    `,
+    image: "/case/skord-agents-1.png",
+    tags: ["AI Agents", "LLM", "RAG", "Workflow Automation", "Guardrails"],
+    results: [
+      "Agents grounded in company knowledge, with cited sources",
+      "Workflow builder combining AI steps with human review",
+      "Guardrails, evaluations, and full conversation logs",
+    ],
+    client: "Skord Labs (In-house platform)",
+    duration: "In-house platform",
+    team: ["AI Engineers", "Backend Engineers", "Product Design"],
+    galleryImages: ["/case/skord-agents-2.png"],
+  },
+  {
     id: 15,
     title: "Orbit Offline-first Android Task Manager",
     slug: "orbit-offline-first-android-task-manager",
@@ -179,7 +343,7 @@ export const caseStudies: CaseStudy[] = [
     projectUrl: "https://www.findimoto.co.za/",
   },
   {
-    id: 15,
+    id: 20,
     title: "Mens Confidence Wellness Commerce Store",
     slug: "mens-confidence-wellness-commerce-store",
     category: "Shopify Commerce + Brand",

@@ -63,6 +63,18 @@ const navGroups: NavGroup[] = [
         ],
       },
       {
+        label: "Digital marketing & growth",
+        href: "/services/digital-marketing",
+        children: [
+          "Performance marketing (Google & Meta Ads)",
+          "SEO & content strategy",
+          "Social media management",
+          "Conversion rate optimisation",
+          "Marketing analytics & attribution",
+          "Email & marketing automation",
+        ],
+      },
+      {
         label: "Develop your MVP with us",
         href: "/services/mvp-development",
         children: [
